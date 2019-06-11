@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="ipt" type="text">
+    <button id="btn">验证</button>
+<!-- 
+\d    [0-9]
+\w    [a-zA-Z_]
+\s    空白符
+
+\D   [^0-9]
+\W    [^a-zA-Z_]
+\S
+ -->
+    <script>
+    
+        // test只要有一部分符合就返回true
+    var oIpt=document.getElementById('ipt');
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function(){
+        var re=/^\w+@[a-zA-Z0-9]+\.[a-zA-Z]+$/g
+        if(re.test(oIpt.value)){
+           alert('邮箱正确')
+        }else{
+            alert('请输入正确的邮箱格式')
+        }
+    }
+    // ^  在方括号以外  且放在行首  必须以**开头
+    // $  放在行尾   必须以**结尾
+    </script>
+</body>
+</html>

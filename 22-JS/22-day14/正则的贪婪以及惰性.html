@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+//     var s ='abbbaabbbaaabbb1234';
+
+// var re1=/.bbb/g;//是贪婪量词
+
+// console.log(s.match(re1))
+
+// 这个匹配过程将从整个字符串开始：
+
+// re1.test(“abbbaabbbaaabbb1234”);//false ，则去掉最后一个字符4再继续
+
+// re1.test(“abbbaabbbaaabbb123”);//false ，则去掉最后一个字符3再继续
+
+// re1.test(“abbbaabbbaaabbb12”);//false ，则去掉最后一个字符2再继续
+
+// re1.test(“abbbaabbbaaabbb1”);//false ，则去掉最后一个字符1再继续
+
+// re1.test(“abbbaabbbaaabbb”);//true ，结束
+
+// 在贪婪量词的后面加多一个?就变成了惰性量词，它的匹配过程相反，是从前面第一个开始，不匹配则加一个，如此循环直到字符串结束，以上面的为例子。
+
+
+
+var s ='abbbaabbbaaabbb1234';
+
+var re1=/.?bbb/g;//?是惰性量词
+
+re1.test(s);
+
+// 它的匹配过程如下：
+
+// re1.test(“a”);//false, 再加一个
+
+// re1.test(“ab”);//false, 再加一个
+
+// re1.test(“abb”);//false, 再加一个
+
+// re1.test(“abbb”);//true, 匹配了，保存这个结果，再从下一个开始
+
+// re1.test(“a”);//false, 再加一个
+
+// re1.test(“aa”);//false, 再加一个
+
+// re1.test(“aab”);//false, 再加一个
+
+// re1.test(“aabb”);//false, 再加一个
+
+// re1.test(“aabbb”);//true, 匹配了，保存这个结果，再从下一个开始
+    
+    </script>
+</body>
+</html>

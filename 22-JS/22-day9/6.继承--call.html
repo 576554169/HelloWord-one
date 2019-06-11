@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function show(a,b){
+          alert(this+a+b)
+      }   
+    //   show() 
+    show.call('abc',7,8)
+    // apply
+    // call 第一个参数 是this的指向   剩下的参数 就是实参
+    </script>
+</body>
+</html>

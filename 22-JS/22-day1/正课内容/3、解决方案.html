@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    // for
+    // some
+    // every
+    // reduce
+    // reduceRight
+    // map
+    // forEach
+    // forIn
+    // for of
+    for(var i=0;i<oUl.childNodes.length;i++){
+    //    alert(oUl.childNodes[i].nodeType)
+        if(oUl.childNodes[i].nodeType==1){
+            oUl.childNodes[i].style.background='red'
+        }
+    }    
+
+
+    // 子节点==》childNodes=>包括了 父级元素下所有内容  文本+元素+注释
+    // nodeType==》判断节点的类型
+    // 注意：当用JS去操作Dom的时候，咱们只能操作元素节点
+    </script>
+</body>
+</html>

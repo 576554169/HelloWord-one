@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // JSON.parse==>把json字符串转化为json对象
+    // JSON.stringify===》把json对象转化为json字符串   
+    if(!window.localStorage){
+        alert('您的浏览器版本太低')
+    }else{
+        var storage=window.localStorage;
+        var data={
+            a:1,
+            b:2
+        }
+        var data2=JSON.stringify(data)
+        console.log(typeof data2)
+        storage.setItem('name',data2)
+
+        var data3=JSON.parse(storage.getItem('name'))
+        console.log(typeof data3)
+
+      
+    }
+    </script>
+</body>
+</html>

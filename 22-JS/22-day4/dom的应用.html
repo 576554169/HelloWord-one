@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <input type="button" id="btn" value="点击">
+    <ul id="ul2"></ul>
+    <script>
+    var oUl1=document.getElementById('ul1');
+    var oBnt=document.getElementById('btn');
+    var oUl2=document.getElementById('ul2');
+    oBnt.onclick=function(){
+        var oLi=oUl1.children[0]
+        oUl2.appendChild(oLi)
+        // 对已有的节点进行操作，都是剪切
+    }
+    // 先删除第一个UL中的li
+    // 再添加到ul2中
+    </script>
+</body>
+</html>

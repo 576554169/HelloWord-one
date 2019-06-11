@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1<a href="javascript:;">删除</a></li>
+        <li>2<a href="javascript:;">删除</a></li>
+        <li>3<a href="javascript:;">删除</a></li>
+        <li>4<a href="javascript:;">删除</a></li>
+        <li>5<a href="javascript:;">删除</a></li>
+    </ul>
+    <script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    var oA=document.getElementsByTagName('a');
+    for(var i=0;i<oA.length;i++){
+        oA[i].onclick=function(){
+        oUl.removeChild(this.parentNode)
+        // 删除子节点
+        // 父级.removeChild(子集)
+        }
+    }
+    </script>
+</body>
+</html>

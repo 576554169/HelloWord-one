@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 150px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+   <button>下拉</button>
+   <button>上拉</button>
+   <div></div>
+
+   <script src="./jquery.js"></script>
+   <script>
+     $('button:first').click(function(){
+        $('div').slideDown(2000)
+    })
+
+    $('button:last').click(function(){
+        $('div').slideUp(2000)
+    })
+
+
+//    $('button:first').click(function(){
+//        $('div').slideToggle()   //切换
+//    })
+   </script>
+</body>
+</html>

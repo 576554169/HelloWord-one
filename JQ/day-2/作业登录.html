@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="onsub">
+        <table>
+            <tr>用户：
+                <td><input type="text" id="user"></td>
+            </tr>
+            <tr><input type="submit" value="登录"></tr>
+        </table>
+
+    </form>
+</body>
+<script src="cookie.js"></script>
+<script>
+    var ouser = document.getElementById('user')
+    var xuser = getCookie('user')
+    onsub.onsubmit = function () {
+        if (ouser.value == xuser) {
+            alert('登录成功')
+        } else {
+            alert('登录不成功')
+        }
+    }
+
+</script>
+
+</html>

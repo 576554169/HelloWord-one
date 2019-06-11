@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>
+        注册
+    </h2>
+    <form action="#" method="POST" onsubmit="return check()">
+        <table>
+            <tr>
+                <th>用户名</th>
+                <td><input type="text" id="username"></td>
+                <td id="con1"></td>
+            </tr>
+            <tr>
+                <th>密码</th>
+                <td><input type="password" id="psd"></td>
+                <td id="con2"></td>
+            </tr>
+            <tr>
+                <th>邮箱</th>
+                <td><input type="text" id="mail"></td>
+                <td id="con3"></td>
+            </tr>
+            <tr>
+                <input type="submit" role="">
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var username = document.getElementById('username');
+        var psd = document.getElementById('psd')
+        var mail = document.getElementById('mail')
+        var con1 = document.getElementById('con1')
+        var con2 = document.getElementById('con2')
+        var con3 = document.getElementById('con3')
+        
+        // username.onfocus=function(){
+        //     con1.innerHTML='用户名不为空'
+        //     con1.style.color='red'
+        // }
+        // username.onblur=function(){
+        //     if(username.value.length>0 ||(/^\S+/).test(username.value)){
+        //         con1.innerHTML='格式正确'
+        //         con1.style.color='green'
+        //         }else{
+        //         con1.innerHTML='格式不正确'
+        //     }
+        // }
+        // psd.onfocus=function(){
+        //     con2.innerHTML=('密码不少于6位，由字母、数组、下划线组成')
+        //     con2.style.color='red'
+        // }
+        // psd.onblur=function(){
+        //     if((/\w{6,}/).test(psd.value)){
+        //         con2.innerHTML='密码格式正确'
+        //         con2.style.color='green'
+        //     }else{
+        //         con2.innerHTML='密码格式不正确'
+        //     }
+        // }
+        // mail.onfocus=function(){
+        //     con3.innerHTML='请输入邮箱'
+        //     con3.style.color='red'
+        // }
+        // mail.onblur=function(){
+        //     if((/^\w+@\w+.com/).test(mail.value)){
+        //         con3.innerHTML='格式正确'
+        //         con3.style.color='green'
+        //     }else{
+        //         con3.innerHTML='格式不正确'
+        //     }
+        // }
+        function test(re,name,cons,p1,p2,p3){
+            name.onfocus=function(){
+            cons.innerHTML=p1
+            cons.style.color='red'
+            }
+            name.onblur=function(){
+                if(name.value.length>0 ||(re).test(name.value)){
+                    cons.innerHTML=p2
+                    cons.style.color='green'
+                    }else{
+                    cons.innerHTML=p3
+                }
+            }
+        }
+        test(username,con1,'用户名不为空','格式正确','格式不正确')
+        test(/^\S+/,mail,con3,'请输入邮箱','格式正确','格式不正确')
+        test(psd,con2,'密码格式正确','格式正确','格式不正确')
+        function check(){
+            if(username.value.length>0 ||(/^\S+/).test(username.value)){
+                con1.innerHTML='格式正确'
+                con1.style.color='green'
+                }else{
+                alert('用户名格式不正确')
+                return false;
+            }
+            if((/\w{6,}/).test(psd.value)){
+                con2.innerHTML='密码格式正确'
+                con2.style.color='green'
+            }else{
+                alert('密码格式不正确')
+                return false;
+            }
+            if((/^\w+@\w+.com/).test(mail.value)){
+                con3.innerHTML='格式正确'
+                con3.style.color='green'
+            }else{
+                alert('邮箱格式不正确')
+                return false;
+            }
+        }
+    </script>
+    
+</body>
+</html>

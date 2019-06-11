@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多物体运动框架</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            margin: 10px;
+            left: 0;
+            /* filter: alpha(opacity:30); */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">宽</div>
+    <div id="box2">移动</div>
+    <div id="box3">透明度</div>
+    <script>
+        var box1 = document.getElementById("box1")
+        var box2 = document.getElementById("box2")
+        var box3 = document.getElementById("box3")
+        box1.onclick = function () {
+            startMove(this, "width", 200)
+        }
+        box2.onclick = function () {
+            startMove(this, "left", 200)
+        }
+        box3.onclick = function () {
+            startMove(this, "opacity", 30)
+        }
+        function getStyle(obj, attr) {
+            if (obj.currentStyle) {
+                return obj.currentStyle[attr]
+            } else {
+                return getComputedStyle(obj, false)[attr]
+
+            }
+        }
+
+        function startMove(obj, attr, iTarget) {
+            clearInterval(obj.time)
+            obj.time = setInterval(function () {
+                // 判断是透明度还是其他属性
+                if (attr == "opacity") {
+                    var cur = Math.round(parseFloat(getStyle(obj, attr)) * 100);
+                } else {
+                    var cur = parseInt(getStyle(obj, attr));
+                }
+                // 设置速度
+                var speed = (iTarget - cur) / 5;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                // 判断运动
+                if (iTarget == cur) {
+                    clearInterval(obj.time)
+                } else {
+                    if (attr == "opacity") {
+                        cur += speed;
+                        obj.style.opacity = cur / 100;
+                        obj.style.filter = "alpha(opacity:" + cur + ")";
+                    } else {
+                        cur += speed;
+                        obj.style[attr] = cur + "px"
+                    }
+                }
+            }, 30)
+        }
+    </script>
+</body>
+
+</html>

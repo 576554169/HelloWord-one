@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery.js"></script>
+    <style>
+        *{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+       ul>li{
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        float: left;
+        margin-left: 20px;
+    }
+    </style>
+</head>
+<body>
+    
+    <ul id="ul">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<script>
+    var isShow=true;
+    $('li').mouseover(function(){
+       if(isShow){
+           var index=$(this).index()
+           $('li').each(function(i,ele){
+            if(index>=i){
+                $(ele).css({'background':'blue'})
+            }
+           })
+       }
+    }).mouseout(function(){
+        if(isShow){
+            $('li').css({'background':'red'})
+        }
+    })
+    $('li').click(function(){
+        isShow=false;
+    })
+
+</script>
+</body>
+</html>

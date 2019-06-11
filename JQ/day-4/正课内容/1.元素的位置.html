@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;padding: 0;
+    }
+    #box{
+        width: 500px;
+        height: 500px;
+        margin: 50px auto;
+        position: relative;
+        background: black;
+    }
+    #box2{
+        width: 100px;
+        height: 100px;
+        background: red;
+       
+        position: absolute; 
+        left: 100px;
+        top: 100px;
+      
+    }
+    </style>
+</head>
+<body>
+    <button>点击设置offset</button>
+    <div id="box">
+        <div id="box2"></div>
+    </div>
+
+    <script src="../jquery.js"></script>
+    <script>
+    // 元素的位置
+    // offset   ==>基于窗口/文档的位置
+      var $boxOffset=$('#box2').offset()
+      console.log($boxOffset.left,$boxOffset.top)
+    
+    // position   ==>根据父级定位元素
+      var $boxPosition=$('#box2').position()
+       console.log($boxPosition.top,$boxPosition.left)
+
+    //  position   offset   =>读写合一
+       $('button').click(function(){
+           $('#box2').offset({
+               'top':200,
+               'left':200
+           })
+       })
+    </script>
+</body>
+</html>

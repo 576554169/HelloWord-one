@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // document.onclick=function(){
+    //     alert(this)  //document
+    //     // 原生JS： 谁调用他 他指向谁
+    //     // 面向对象：这个方法属于谁，他指向谁
+    // }
+
+    // document.onclick=()=>{
+    //     alert(this)  //window
+    // }
+
+// ------------------------------------------------------------
+
+// document.onclick=function(){
+//     var arr=[1,2,3,4]
+//     arr.a=function(){
+//         console.log(this)  //arr
+//     }
+//     arr.a()
+// }
+
+// document.onclick=function(){
+//     var arr=[1,2,3,4]
+//     arr.a=()=>{
+//         alert(this)     //document
+//     }
+//     arr.a()
+// }
+
+// --------------------------------------------------------------
+
+//   var json={
+//       a:function(){
+//           console.log(this)
+//       }
+//   }
+//   json.a()
+
+    // var json={
+    //     a:()=>{
+    //         console.log(this) //window
+    //     }
+    // }
+    // json.a()
+
+// --------------------------------------------------------
+
+//   var json={
+//       a:()=>{
+          
+//           setInterval(()=>{
+//             console.log(this)
+//           },1000)
+
+//       }
+//   }
+//   json.a()
+
+//   箭头函数本事是没有this指向的
+//   ***箭头函数的this指向是根据所在环境定义的
+//   看父级所在的环境
+
+// ---------------------------------------------
+        
+    //    function CreatePerason(){
+    //         this.name='lvv'
+    //    }
+    //    var obj=new CreatePerason()         
+    //    console.log(obj.name)
+          
+
+        // ()=>{
+        //     // 不能构造函数  this
+        // }
+    </script>
+</body>
+</html>

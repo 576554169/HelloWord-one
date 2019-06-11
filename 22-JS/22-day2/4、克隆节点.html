@@ -1,0 +1,33 @@
+<!doctype html>
+<html
+<head>
+	<meta charset="UTF-8">
+	<title>test</title>
+</head>
+<body>
+	<button id="btn4">克隆</button>
+	<ul class="ul">
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	    <li></li>
+	</ul>
+ 
+<script>
+ 
+var btn = document.getElementById('btn4');
+var ulObj = document.getElementsByClassName('ul')[0];
+// var lis = document.getElementsByTagName('li');
+ var lis=ulObj.children
+    var len=ulObj.children.length;
+	btn.onclick=function(){
+    for(var i=0;i<len;i++){
+        var newli=lis[i].cloneNode();
+        ulObj.appendChild(newli);
+    }
+}
+</script>
+</body>
+</html>

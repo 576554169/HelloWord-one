@@ -1,0 +1,122 @@
+jQuery
+=>大型的JS函数库===》市场开发  大部分用的都是JQuery
+特点：读写合一，隐式遍历，链式调用
+
+JQ的核心函数：$/jQuery
+    $(function(){})===>jQ的入口函数
+    $('ele')===>找到这个标签
+    $('selector')===》匹配满足这个选择器的元素
+    $('<li></li>')===》创建这个元素
+JQ的核心对象：函数之后的结果就是对象  $()  ===>想要调用JQ的方法，必须是JQ的对象
+    size()/length     $('div').size()
+    $('li')[index]/$('li').get(index)    得到DOM元素     JQ与JS 如果转化？？
+    each();
+    index()
+ 
+jQ入口函数与JS入口函数的区别
+ 1》加载顺序  2》出现个数   3》有无简写   4》存在位置   5》兼容性（JQ Ajax自动兼容）
+
+ 选择器：
+     基本选择器   层次选择器  过滤选择器  表单选择器
+
+对属性的操作：
+attr()     removeAttr()
+prop()     removeProp()
+addClass()   removeClass()  toggleClass()    hasClass():判断该元素是否存在此类名，有的话返回true
+
+对文本的操作：
+html()   val()  text()
+
+对文档的操作：
+内部插入
+append     $('ul').append($('<li></li>>'))
+appendTo    $('<li></li>>').appendTo($('ul'))
+prepend 
+prependTo
+
+外部插入
+after
+before
+insertAfter
+insertBefore
+
+文档的包裹：
+wrap()
+unwrap()
+wrapInner()
+wrapAll()
+
+文档的删除：
+empty()
+remove()
+detach()
+
+文档的替换:
+replaceWith()
+replaceAll()
+
+文档的克隆
+clone()  /true   false
+
+jQ对象的查询与筛选
+eq(index)
+first()
+last()
+has()*****判断的是后代元素
+is()
+filter()
+not()
+
+find()>后台
+children()>子代
+parent()
+next()                       隐式遍历
+prev()
+nextAll()
+prevAll()
+siblings()除了自己以外所有的兄弟元素
+
+JQ的动画：
+show()  hide()  toggle()****!
+slideDown()    slideUp()   slideToggle()
+fadeIn()   fadeOut()   fadeToggle()   fadeTo()
+
+animate({},1000,fn)    delay()    stop()
+
+元素的大小
+width()  height()   内容大小
+innerWidth()   innerHeight()   内容+padding
+outerWidth()   outerHeight()  当传入true：内容+padding+border+margin    不传或者传入false  则不加上margin
+
+元素的位置：
+基于文档的位置
+offset().top   offset().left     offset({
+                                        "left":'100px',"top":"100px"
+                                        })
+
+基于父级定位元素：position()
+
+scrollTop()    scrollLeft()
+$('div').scrollTop()     $("html,body").scrollTop()
+
+元素的状态：
+:hidden     :visible    :disabled
+
+元素的绑定与解绑：
+bind()  unbind()
+live()   die()
+one()
+on()   off()
+delegate()   undelegate()
+
+鼠标的坐标
+ev.pagex==>基于文档
+ev.clientx==>基于可视窗口
+ev.offsetX===>基于发生事件的元素
+
+*停止事件冒泡：event.stopPropagation()
+*组织事件默认行为：event.preventDefault()
+
+css()
+
+focus()

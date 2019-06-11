@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<form action="">-->
+			<input type="text" name="user"/>
+			<input type="password" name="pass"/>
+			<input id="btn" type="button" value="提交"/>
+		<!--</form>-->
+	</body>
+	<script>
+		var oBtn = document.getElementById('btn');
+		oBtn.onclick = function(){
+			var oUser = document.getElementsByName('user')[0].value;
+			var oPass = document.getElementsByName('pass')[0].value;
+			setCookie('User',oUser,7);
+			setCookie('Pass',oPass,7);
+			window.location.href = './tiaozhuan.html';
+//			event.preventDefault ? event.preventDefault() : (event.returnValue = false)
+		}
+		function setCookie (name,value,iDay) {
+			var oDate=new Date()
+			oDate.setDate(oDate.getDate()+iDay);
+			document.cookie=name+'='+value+';expires='+oDate;
+		}	
+
+		console.log(document.cookie)
+	</script>
+</html>

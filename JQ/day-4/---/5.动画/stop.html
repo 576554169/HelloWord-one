@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+<!-- 
+stopAll 为false时，不停止被选元素所有加入队列的动画,仅停止当前的动画。
+stopAll 为true时，停止所有加入队列的动画（如goToend为true，直接跳到当前动画的最终效果）。
+
+goToend 为false时，不允许直接跳到当前动画的最终效果(应该就是所谓的完成当前的动画吧)，
+goToend 为true时，允许直接跳到完成当前动画的最终末尾效果
+ -->
+    <button>动作1</button>
+    <button>动作2</button>
+    <div></div>
+    <script src="../jquery.js"></script>
+    <script>
+    $('button:eq(0)').click(function(){
+        $('div').animate({'left':"600px"},2000)
+    })
+    $('button:eq(1)').click(function(){
+        $('div').stop(true).animate({'left':"0px"},2000)
+    })
+    </script>
+</body>
+</html>

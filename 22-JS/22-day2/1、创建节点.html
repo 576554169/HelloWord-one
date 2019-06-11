@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ovalue">
+    <input type="button" id="ipt" value="创建">
+    <ul id="ul"></ul>
+    <script>
+    var oUl=document.getElementById('ul');
+    var oIpt=document.getElementById('ipt');
+    var oValue=document.getElementById('ovalue');
+    oIpt.onclick=function(){
+        var oLi=document.createElement('li');
+        oLi.innerHTML=oValue.value
+        oUl.appendChild(oLi)
+        // // createElement=>创建节点
+        // oUl.appendChild(oLi)
+        // // 插入节点
+        // // 父级Ele.appendChild(子集)
+    }
+
+    </script>
+</body>
+</html>

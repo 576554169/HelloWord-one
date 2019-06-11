@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+    <script>
+    // window.onload=function(){
+    //     var oDiv=document.getElementsByTagName('div');
+    //     for(var i=0;i<oDiv.length;i++){
+    //         oDiv[i].onclick=function(){
+    //             alert(this.innerHTML)
+    //         }
+    //     }
+    // }
+    //  JQ
+    // $(document).ready(function(){})   的缩写$(function(){})
+    $(function(){
+    //隐式遍历
+    $('div').click(function(){  //隐式遍历    
+        // alert(this.innerHTML)//JS
+       alert($(this).html('456'))
+
+    //    html()  innerHTML
+    //    val()     value
+    })    
+})
+
+
+    </script>
+</head>
+<body>
+    <!-- 
+        JQ  ==> JS的大型函数库
+        1.读写合一
+        2.隐式遍历
+        3.JS的大型函数库
+        4.写的少做的多
+     -->
+
+     <div>11111</div>
+     <div>22222</div>
+     <div>33333</div>
+</body>
+</html>

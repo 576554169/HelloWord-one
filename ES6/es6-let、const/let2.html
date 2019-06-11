@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // let  无变量提升   不能在调用后去声明
+    
+    // 如果在当前作用域找不到的话，往上一级作用域去找，
+    // 如果在找不到  就往顶层作用域（window）去找===》这一过程叫做作用域链
+    let a=1;
+    function show() { 
+        //let 没有变量提升所以说会直接报错
+        // TDZ暂时性死区
+        console.log(a)
+        let a=2
+
+     }
+     show()
+    </script>
+</body>
+</html>

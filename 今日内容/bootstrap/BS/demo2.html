@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <title>Document</title>
+    <style>
+        .tr1{
+            background: yellow !important;
+   
+        }
+    </style>
+</head>
+<body style="height:2000px;">
+    <!-- 栅格系统 -->
+    <!-- 
+        col-xs   column  列  内容放在column里
+        column为row子元素
+     -->
+     <!-- 
+1.排列 尺寸
+2.位移
+3.存在或者不存在  hidden-xs在XS下不可见
+                 
+      -->
+    <div class="container">
+        <div class="row">
+
+            <div class="visible-xs col-lg-6 col-md-12 col-sm-12 col-xs-8 col-xs-offset-2 bg-danger">
+                    <a class="btn btn-default" href="#" role="button">Link</a>
+                    <button class="btn btn-default" type="submit">Button</button>
+                    <input class="btn btn-default" type="button" value="Input">
+                    <input class="btn btn-default" type="submit" value="Submit">
+            </div>
+
+            <div class="col-lg-4 col-md-8 col-sm-6 col-xs-8 col-xs-offset-2 bg-success">
+                    <a class="btn btn-default" href="#" role="button">Link</a>
+                    <button class="btn btn-default" type="submit">Button</button>
+                    <input class="btn btn-default" type="button" value="Input">
+                    <input class="btn btn-default" type="submit" value="Submit">
+            </div>
+            
+            <div class="col-lg-2 col-md-4 col-sm-6 col-xs-8 col-xs-offset-2 bg-warning">
+                    <a class="btn btn-default" href="#" role="button">Link</a>
+                    <button class="btn btn-default" type="submit">Button</button>
+            </div>
+        </div>
+
+        <h1>我是有BS的H1标签<small>Secondary text</small></h1>
+        <p class="lead">水电费交换格式客户端手机号的数据厚大司考聚会的深V蝴蝶结款</p>
+
+        <!-- 引用 -->
+        <blockquote class="blockquote-reverse"> 
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        </blockquote>
+        <!-- 列表 -->
+        <ol class="list-unstyled list-inline">
+            <li>111111</li>
+            <li>111111</li>
+            <li>111111</li>
+            <li>111111</li>
+            <li>111111</li>
+        </ol>
+        <!-- 表格 -->
+        <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <tbody>
+                <tr class="active">
+                        <td>杨海泉</td>
+                        <td>杨靠谱</td>
+                        <td>小红鞋</td>
+                        <td>杨海泉</td>
+                        <td>杨靠谱</td>
+                        <td>小红鞋</td>
+                        <td>杨海泉</td>
+                        <td>杨靠谱</td>
+                        <td>小红鞋</td>
+                </tr>
+                <tr class="success">
+                        <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                    </tr>
+                    <tr class="warning">
+                            <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                        </tr>
+                        <tr class="info">
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                        </tr>
+                        <tr class="danger">
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                <td>杨海泉</td>
+                                <td>杨靠谱</td>
+                                <td>小红鞋</td>
+                                
+                        </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- 表单 -->
+    <!-- form-group   -->
+    <!-- form-control -->
+    <!-- help-block -->
+    <!-- form-inline   list-inline -->
+    <!-- disabled 禁用 -->
+    <form>
+            <div class="form-group">
+              <label class="" for="exampleInputEmail1">Email address</label>
+              <input disabled='disabled' type="email" class=" form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+              <label for="exampleInputFile">File input</label>
+              <input type="file" id="exampleInputFile">
+              <p class="help-block">Example block-level help text here.</p>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Check me out
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-default">Submit</button>
+            
+          </form>
+          <!-- button -->
+          <br>
+          <a class="btn btn-default btn-lg" href="#" role="button">Link</a>
+          <button class="btn btn-success btn-sm" type="submit">Button</button>
+          <input class="btn btn-warning btn-xs" type="button" value="Input">
+          <input class="btn btn-info" type="submit" value="Submit">
+          <div role="button" disabled='disabled' class="btn btn-primary btn-block active">胡歌</div>
+    <!-- 图片 -->
+    <img src="" class="img-responsive">
+
+<!-- <img src="lvv.jpg" alt="..." class="img-rounded">
+<img src="lvv.jpg" alt="..." class="img-circle">
+<img src="lvv.jpg" alt="..." class="img-thumbnail"> -->
+<!-- 辅助类 -->
+<p class="text-muted">..三个二我特.</p>
+<p class="text-primary">.Ethan多提意见有jy..</p>
+<p class="text-success">.人人员人头二..</p>
+<p class="text-info">..二有结合而就多提意见dyt.</p>
+<p class="text-warning">.发个开发看j..</p>
+<p class="text-danger">..封条伏特加他ftu.</p>
+
+<p class="bg-primary">.曲儿为若二阿哥ewry..</p>
+<p class="bg-success">.sethtrhtrrt..</p>
+<p class="bg-info">..三天后输入他挺好然后.</p>
+<p class="bg-warning">是gasgarg...</p>
+<p class="bg-danger">.ear个和他tr..</p>
+    <!-- 快速浮动  不能用于导航条组件中，因为导航条组件中有她自己的方法 -->
+<!-- <div class="pull-left">.11111..</div>
+<div class="pull-right">.22222..</div> -->
+<!-- 让内容块居中 -->
+<!-- <div style=";" class="center-block">..阿尔法维特瑞.</div> -->
+<!-- 清除浮动 clearfix -->
+<!-- 显示隐藏内容 -->
+<div class="show">1111</div>
+<div class="hidden">2222</div>
+
+<a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+
+<div class="row">
+        <div class="col-md-9 col-xs-offset-2">.col-md-9 .col-md-push-3</div>
+        <div class="col-md-3 col-xs-push-2">.col-md-3 .col-md-pull-9</div>
+      </div>
+    </div>
+
+    
+</body>
+</html>

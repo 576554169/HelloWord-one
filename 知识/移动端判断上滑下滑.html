@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <script>
+    var startY=0
+    var lastY=0
+    
+    var startX=0
+    var lastX=0
+    $(document).on('touchstart',function(ev){
+        startY=ev.touches[0].pageY
+        startX=ev.touches[0].pageX
+    })
+
+    $(document).on('touchend',function(ev){
+        lastY=ev.changedTouches[0].pageY
+        lastX=ev.changedTouches[0].pageX
+
+        if(startY-lastY>200){
+           alert('上滑')
+        }else if(startY-lastY<-200){
+            alert('下滑')
+        }
+    })
+
+    </script>
+</body>
+</html>

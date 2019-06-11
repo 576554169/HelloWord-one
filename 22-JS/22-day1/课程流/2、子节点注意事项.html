@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // 文本节点不能设置样式
+        // 通过判断nodeType==1，来确定元素节点
+        var oUl = document.getElementsByTagName('ul')[0]
+        // for(var i=0;i<oUl.childNodes.length;i++){
+        //     if (oUl.childNodes[i].nodeType==1) {
+        //         oUl.childNodes[i].style.background='red'
+        //     }
+        // }
+
+        // children  只包括元素节点
+        // alert(oUl.children.length)
+
+        for (var i = 0; i < oUl.children.length; i++) {
+                oUl.children[i].style.background = 'red'
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="排序" id="btn">
+    <table id="tab" border="1" width='400'>
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>yhq</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>zxj</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>wpd</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>ll</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>lvv</td>
+                <td>17</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+    var oTab=document.getElementById('tab');
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function(){
+        var arr=[]
+        for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+            arr[i]=oTab.tBodies[0].rows[i]
+            // 行
+        }
+        arr.sort(function(li1,li2){
+            var n1=parseInt(li1.cells[0].innerHTML)
+            var n2=parseInt(li2.cells[0].innerHTML)
+            return n1-n2
+        })
+        for(var i=0;i<arr.length;i++){
+           oTab.tBodies[0].appendChild(arr[i])
+        }
+    }
+    </script>
+</body>
+</html>

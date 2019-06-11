@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        // 第一个子节点 firstChild  IE6/7/8里代表的是第一个元素节点，除这
+        // 三个以外，代表的是文本节点
+        // firstElementChild  主流浏览器 （IE9>=） 指的是第一个元素节点
+
+        // lastChild        lastElementChild
+        // nextSibling(下一个兄弟元素)   nextElementSibling
+        // previousSibling(上一个兄弟元素)   previousElementSibling
+    var oUl=document.getElementsByTagName('ul')[0];
+    oUl.firstChild.style.background='red';
+    </script>
+</body>
+</html>

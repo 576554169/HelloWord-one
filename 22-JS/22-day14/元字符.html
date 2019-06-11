@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 元字符==》[] -->
+    <script>
+    // 表示或
+    // ^  在方括号中代表的是 非
+    var str='apc wpc dpc epc rpc tpc ypc'
+    var re=/[^awd]pc/g
+    console.log(str.match(re))
+    
+    // 范围
+    var str2='aef12345 arsg 8878';
+    var re2=/[0-9]+/g
+    console.log(str2.match(re2))
+    </script>
+</body>
+</html>

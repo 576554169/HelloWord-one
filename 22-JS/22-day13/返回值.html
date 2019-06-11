@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width:100px;height:100px;background:red;"></div>
+    <!-- 
+        参数：是把一个值传进来
+        返回值：传出去
+     -->
+     <script>
+    //函数可以不写返回值，如果不写返回值  默认  return undefined
+    
+    // function show(a,b){
+    //      n=a+b
+    //      return n
+    // }
+    // console.log(show(1,2))
+
+    // var x = 1; 
+    // function fn(n){
+    //     n = n+1
+    //     return n
+    // }; 
+    // y = fn(x);
+    // console.log(fn(x))
+
+    // function show(){
+    //    console.log(arguments.length)
+    // }
+    // show(1,2,3,4,5,6)
+
+    
+    // 可以算我传的参数的和
+    //arguments不定参 
+       //不定参==》求和 
+    // function sum(){
+    //    var result=0;
+    //    for(var i=0;i<arguments.length;i++){
+    //     result+=arguments[i]
+    //    }
+    //    return result
+    // }
+    // console.log(sum(1,2,3,4,5,6,7,8))
+
+    // CSS()
+        // 传两个值的时候==》obj  属性==》读取这个属性
+        // 传三个值的时候==》obj  属性   属性值   ==》设置、
+
+        var oBox=document.getElementById('box')
+       function Css(obj,name,val){
+           if(arguments.length==2){
+             return oBox.style[name]
+           }else{
+               oBox.style[name]=val
+           }
+       }
+       console.log(Css(oBox,'background','black'))
+     </script>
+</body>
+</html>

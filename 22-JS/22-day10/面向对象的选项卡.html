@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            width: 300px;
+            height: 230px;
+            background: yellow;
+            margin: 0 auto;
+            overflow: hidden
+        }
+
+        .li {
+            background: pink;
+        }
+
+        #box1 div {
+            width: 300px;
+            height: 200px;
+            background: red;
+            text-align: center;
+            line-height: 200px;
+            font-size: 30px;
+        }
+    </style>
+
+    <script>
+        window.onload = function () {
+            new lixiao('box1');
+        }
+        function lixiao(nav) {
+            var _this = this;
+            var box1 = document.getElementById(nav);
+            this.btn = box1.getElementsByTagName('input');
+            this.div = box1.getElementsByTagName('div');
+            for (var a = 0; a < this.btn.length; a++) {
+                this.btn[a].index = a;
+                this.btn[a].onclick = function () {
+                    _this.o(this);
+                }
+            }
+        }
+        lixiao.prototype.o = function (ba) {
+            for (var a = 0; a < this.btn.length; a++) {
+                this.btn[a].className = '';
+                this.div[a].style.display = 'none';
+            }
+            ba.className = 'li';
+            this.div[ba.index].style.display = 'block';
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+        <input class="li" value="5" type="button">
+        <input value="5" type="button">
+        <input value="5" type="button">
+
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

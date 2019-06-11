@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../../../jquery.js"></script>
+</head>
+<body>
+    <script>
+        function $(){
+            obj = new Object();
+            obj.hover = function(){
+                alert("lalala")
+                return this;
+            }
+            obj.eat = function(){
+                alert("吃饭")
+				return this
+            }
+            return obj;
+        }
+        //对象链式结构
+       $().hover().eat()
+     
+
+
+
+    </script>
+</body>
+</html>

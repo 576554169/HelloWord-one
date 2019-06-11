@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 100px;
+        height: 50px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+    // 鼠标移入，变长
+    var oBox=document.getElementById('box');
+    var timer=null;
+    var speed=null;
+        function startMove(iTarget){
+            clearInterval(timer)
+            timer=setInterval(function(){
+            //确定速度
+            speed=(iTarget-oBox.offsetWidth)/5 
+            //浮点数  对函数的影响
+            speed=speed>0?Math.ceil(speed):Math.floor(speed)
+            // 定义运动
+            if(iTarget==oBox.offsetWidth){
+                clearInterval(timer)
+            }else{
+                oBox.style.width=oBox.offsetWidth+speed+'px'
+            }  
+            },30)
+        }
+    oBox.onmouseover=function(){
+        startMove(300)
+    }
+    oBox.onmouseout=function(){
+        startMove(100)
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .screen-banner {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .all-screen {
+            top: 0;
+            position: absolute;
+            transition: top 0.5s;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var screenBanner = document.getElementsByClassName('screen-banner')[0];
+            var allScreen = document.getElementsByClassName('all-screen')[0];
+            var screenOne = document.getElementsByClassName('screen-one');
+            var screenH, screenW
+            var page = 0;
+            var running = false;
+            // 设置宽高
+            function resize() {
+                screenH = document.documentElement.clientHeight;
+                screenW = document.documentElement.clientWidth;
+                screenBanner.style.width = allScreen.style.width = screenW + 'px';
+                screenBanner.style.height=screenH+'px'
+                allScreen.style.height = screenOne.length * screenH + 'px'
+                for (var i = 0; i < screenOne.length; i++) {
+                    screenOne[i].style.width = screenW + 'px';
+                    screenOne[i].style.height = screenH + 'px';
+                }
+                allScreen.style.top = -page * screenH + 'px'
+            }
+            resize()
+            window.onresize = resize;
+6
+            function myEvent(obj, ev, fn) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(ev, fn, false)
+                } else {
+                    obj.attachEvent('on' + ev, fn)
+                }
+            }
+
+            function scrollUp() {
+                if (!running) {
+                    running = true;
+                    setTimeout(function () {
+                        running = false
+                    }, 1000)
+
+                    if (page > 0) {
+                        page--;
+                    }
+                    allScreen.style.top = -page * screenH + 'px'
+                }
+            }
+            function scrollDown() {
+                if (!running) {
+                    running = true;
+                    setTimeout(function () {
+                        running = false
+                    }, 1000)
+
+                    if (page < screenOne.length - 1) {
+                        page++;
+                    }
+                    allScreen.style.top = -page * screenH + 'px'
+                }
+            }
+
+            function mouseWheel(ev) {
+                var oEvent = ev || event
+                // 谷歌  wheelDelta
+                // 火狐  detail
+                if (oEvent.wheelDelta) {
+                    if (oEvent.wheelDelta > 0) {
+                        scrollUp()
+                    } else {
+                        scrollDown()
+                    }
+                } else if (oEvent.detail) {
+                    if (oEvent.detail > 0) {
+                        scrollDown()
+                    } else {
+                        scrollUp()
+                    }
+                }
+            }
+
+            myEvent(window, 'mousewheel', mouseWheel)
+            myEvent(window, 'DOMMouseScroll', mouseWheel)
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="screen-banner">
+        <div class="all-screen">
+            <div class="screen-one" style="width: 100%; height: 100%; background: red;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: blue;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: green;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: gray;"></div>
+        </div>
+    </div>
+</body>
+
+</html>

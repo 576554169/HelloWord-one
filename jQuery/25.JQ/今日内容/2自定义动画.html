@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+    <button>动起来</button>
+    <div></div>
+
+    <script src="../jquery.js"></script>
+    <script>
+        // animate({},1000,fn)
+    // $('button').click(function(){
+    //     $('div').animate({
+    //         "width":200,
+    //         "height":"200px",
+    //         "background":"yellow"  //自定义动画  只能改变数值，不能改变文字或者字母属性值
+    //     },1000,function(){
+    //         $('div').animate({"left":600},500)
+    //     })
+    // })
+
+    // $('button').click(function(){
+    //     // $('div').animate({'width':'+=100'},1000)
+    //     // $('div').animate({'width':'toggle'},1000)
+    //     // $('div').animate({'width':'hide'},1000)
+    //     // $('div').animate({'width':'show'},1000)
+
+    //     $('div').animate({'width':'toggle'},600)
+    // })
+
+    $('button').click(function(){
+        // $('div').animate({"width":200},500,function(){
+        //     $('div').animate({'height':200},500)
+        // })
+        $('div').animate({'width':200},500).delay(1000).animate({'height':200},500)
+    })
+    </script>
+</body>
+</html>

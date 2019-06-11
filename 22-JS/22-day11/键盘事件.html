@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+    }
+    </style>
+</head>
+<body>
+        <div id="box"></div>
+    <script>
+    //  alert(oEvent.keyCode)
+    var oBox=document.getElementById('box')
+    // onkeydown键盘事件
+    document.onkeydown=function(ev){
+        var oEvent=ev||event
+        if(oEvent.keyCode==37){
+            oBox.style.left=oBox.offsetLeft-10+'px'
+        }else if(oEvent.keyCode==39){
+            oBox.style.left=oBox.offsetLeft+10+'px'
+        }
+    }
+    
+    </script>
+</body>
+</html>

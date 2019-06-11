@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    #div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        top: 50px;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">运动</button>
+    <div id="div"></div>
+    <script>
+    // 290.5 ===>290
+    // 295.5 ===>295
+    // 距离大的时候    速度大
+    // 距离小的时候    速度小
+
+    // Math.ceil
+    // Math.floor
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementById('div');
+    var timer=null;
+    var speed=null;
+    function startMove(){
+        clearInterval(timer)
+        timer=setInterval(function(){
+        speed=(300-oBox.offsetLeft)/10
+        // 速度尽量不要为小数
+        speed=speed>0?Math.ceil(speed):Math.floor(speed)
+        // 定义缓冲速度
+        oBox.style.left=oBox.offsetLeft+speed+'px'
+        document.title=oBox.offsetLeft+','+speed
+        },30)
+    }
+    oBtn.onclick=function(){
+        startMove()
+    }
+    </script>
+</body>
+</html>

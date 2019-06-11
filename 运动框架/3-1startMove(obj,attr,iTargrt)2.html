@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+    }
+    #box2{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+        <div id="box">向左移动</div>
+        <div id="box2">宽度变宽</div>
+        <div id="box3">透明度变换</div>
+    <script>
+    var oBox=document.getElementById('box');
+    var oBox2=document.getElementById('box2');
+    function getStyle(obj,attr){
+        if(obj.currentStyle){
+            return obj.currentStyle[attr]
+        }else{
+            return getComputedStyle(obj,false)[attr]
+        }
+    }
+    oBox.onclick=function(){
+        startMove(this,"left",300)
+    }
+    oBox2.onclick=function(){
+        startMove(this,'width',200)
+    }
+
+
+    function startMove(obj,attr,iTarget){
+         clearInterval(obj.timer)
+         obj.timer=setInterval(function(){
+             var cur=parseInt(getStyle(obj,attr))
+             var speed=(iTarget-cur)/6
+             speed=speed>0?Math.ceil(speed):Math.floor(speed);
+          
+             if(iTarget==cur){
+               clearInterval(obj.timer)
+             }else{
+                 obj.style[attr]=cur+speed+'px'
+             }
+
+         },30)
+    }
+    </script>
+</body>
+</html>

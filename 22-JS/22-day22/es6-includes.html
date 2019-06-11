@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var str="!apple banana qweert?"  
+    console.log(str.includes('banana',6))//从第六位开始查找
+    // 在字符串中查找，如果满足  则返回true
+    console.log(str.startsWith('p',2))//从第2位开始查找
+    // 在字符串的开头查找
+    console.log(str.endsWith('e',5)) //第五个之前的
+    // 在字符串的结尾去查找
+
+    var str2='123456'
+    // console.log(str2.repeat(1.5))//字符串重复
+
+    // console.log(str2.padStart(10,'a'))
+    // console.log(str2.padStart(10,'abcdefg'))
+
+    console.log(str2.padEnd(10,'a'))
+
+    </script>
+</body>
+</html>

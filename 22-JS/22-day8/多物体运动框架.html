@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 50px;
+        background: red;
+        margin: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+    var oBox=document.getElementsByTagName('div')
+    var speed=null;
+    // 在多物体运动框架中，任何东西都不能公用
+        function startMove(obj,iTarget){
+            clearInterval(obj.timer)
+            obj.timer=setInterval(function(){
+            speed=(iTarget-obj.offsetWidth)/5 
+            speed=speed>0?Math.ceil(speed):Math.floor(speed)
+            if(iTarget==obj.offsetWidth){
+                clearInterval(obj.timer)
+            }else{
+                obj.style.width=obj.offsetWidth+speed+'px'
+            }  
+          },30)
+        }
+   for(var i=0;i<oBox.length;i++){
+    oBox[i].onmouseover=function(){
+        startMove(this,400)
+    }
+
+    oBox[i].onmouseout=function(){
+        startMove(this,100)
+    }
+   }
+    </script>
+</body>
+</html>

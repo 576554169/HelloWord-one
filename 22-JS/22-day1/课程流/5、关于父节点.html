@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        left: 50px;
+    }
+    #box2{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background: yellow;
+        top: 50px;
+        left: 50px;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box2"></div>
+    </div>
+
+    <!-- offsetParent:最近的有定位属性的祖先节点
+    （如果都没有定位，则走向body）
+offsetLeft:外边框到有定位父级的内边框的距离
+offsetTop:上边框到有定位父级的上内边框的距离（无offsetRight和offsetBottom）
+
+-->
+
+    <script>
+    var oBox=document.getElementById('box');
+    var oBox2=document.getElementById('box2');
+    // alert(oBox2.offsetParent)
+    alert(oBox2.offsetLeft)
+    </script>    
+</body>
+</html>

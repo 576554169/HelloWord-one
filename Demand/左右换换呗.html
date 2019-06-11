@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #ul1,
+        #ul2 {
+            width: 200px;
+            height: 200px;
+            border: 1px #000 solid;
+            float: left;
+        }
+
+        .active {
+            background: red;
+        }
+
+        li {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        button {
+            float: left;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="ul1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <button>→</button>
+    <button>←</button>
+    <ul id="ul2">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+    <script src="./李/jquery.js"></script>
+    <script>
+        $('#ul1 li').click(function () {
+            $(this).toggleClass('active')
+        })
+        $('#ul2 li').click(function(){
+            $(this).toggleClass('active')
+        })
+        // $('button').first().click(function(){
+        //     $('#ul1').find('.active').appendTo($('#ul2')).removeClass('active')
+        // })
+        // $('button').last().click(function(){
+        //     $('#ul2').find('.active').appendTo($('#ul1')).removeClass('active')
+        // })
+            $('button').first().click(function(){
+                $('#ul1').find('li').each(function(){
+                    if($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                        $('#ul2').append($(this))
+                    }
+                })
+            })
+            $('button').last().click(function(){
+                $('#ul2').find('li').each(function(){
+                    if($(this).hasClass('active')){
+                        $(this).removeClass('active');
+                        $('#ul1').append($(this))
+                    }
+                })
+            })
+        
+    </script>
+
+</body>
+
+</html>

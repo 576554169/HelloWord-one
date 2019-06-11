@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    // 在市场开发中的兼容问题，用IF可以解决近百分之八十
+    // 方法一
+    // if (oUl.firstElementChild) {
+    //     oUl.firstElementChild.style.background='red'
+    // }else{
+    //     oUl.firstChild.style.background='red'
+    // }
+   
+    // 方法二
+    var nodes=oUl.firstElementChild||oUl.firstChild;
+    nodes.style.background='red'
+    </script>
+</body>
+</html>

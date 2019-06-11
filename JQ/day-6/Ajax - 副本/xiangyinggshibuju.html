@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>媒体布局</title>
+		<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}			
+		.box {
+			width: 100%;
+			height: 100%;
+		}			
+		.center {
+			height: 3000px;
+			margin: auto;
+			padding-top: 10px;
+		}			
+		.center li {
+			list-style: none;
+			float: left;
+			margin: auto;
+		}			
+		.tupian {
+			margin: 0 auto;
+			margin-bottom: 5px;
+		}			
+		.tupian img {
+			width: 100%;
+		}			
+		.p1 {
+			font-size: 12px;
+		}			
+		.p2 {
+			font-size: 13px;
+			margin-top: 5px;
+		}			
+		.p3 {
+			font-size: 13px;
+			margin-top: 5px;
+		}			
+		@media screen and (min-width:0px) {
+			
+			.center {
+				width: 260px;
+			}
+			.center li {
+				width: 260px;
+				margin-bottom: 40px;
+			}				
+			.center li:nth-of-type(3n) {
+				margin-right: 0px;
+				float: right;
+			}
+			.tupian {
+				width: 260px;
+				height: 167px;
+			}
+			.p1 {
+				font-size: 18px;
+				width: 100%;
+				height: 20px;					
+			}
+			.p2 {
+				width: 100%;
+				height: 13px;
+			}
+			.p3 {
+				width: 100%;
+				height: 60px;
+			}
+		}
+		
+		@media screen and (min-width:500px) {
+			.center {
+				width: 500px;
+			}
+			.center li {
+				width: 240px;
+				margin-right: 20px;
+				margin-bottom: 40px;
+			}
+			.center li:nth-of-type(even) {
+				margin-right: 0px;
+			}
+			.tupian {
+				width: 150px;
+				height: 97px;
+				float: left;
+				margin-right: 5px;
+			}
+			.p1 {
+				font-size: 18px;
+				width: 85px;
+				float: left;
+				height: 61px;
+			}
+			.p2 {
+				width: 85px;
+				float: left;
+				height: 35px;
+			}
+			.p3 {
+				width: 240px;
+				height: 60px;
+				float: left;
+			}
+		}
+		
+		@media screen and (min-width:900px) {
+			.center {
+				width: 900px;
+			}
+			.center li {
+				width: 260px;
+				margin-right: 60px;
+				margin-bottom: 40px;
+			}
+			.center li:nth-of-type(even) {
+				margin-right: 60px;
+			}
+			.center li:nth-of-type(3n) {
+				margin-right: 0px;
+				float: right;
+			}
+			.tupian {
+				width: 260px;
+				height: 167px;
+			}
+			.p1 {
+				font-size: 18px;
+				width: 100%;
+				height: 20px;
+			}
+			.p2 {
+				width: 100%;
+				height: 13px;
+			}
+			.p3 {
+				width: 100%;
+				height: 60px;
+			}
+		}
+	</style>
+	</head>
+
+	<body>
+		<input type="button" name="btn" id="btn" value="读取" />
+		<div class="box">
+			<ul class="center">
+				
+				<!-- <li>
+					<div class='tupian'>
+						<img src=''>
+					</div>
+					<p class='p1'></p>
+					<p class='p2'></p>
+					<p class='p3'></p>
+				</li> -->
+
+			</ul>
+		</div>
+	</body>
+</html>

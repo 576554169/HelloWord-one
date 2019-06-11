@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>1111111</h2>
+        <h2>2222222</h2>
+        <h2>3333333</h2>
+        <h2>4444444</h2>
+        <h2>5555555</h2>
+    </div>
+    <!-- 元素的删除 -->
+    <script src="../jquery.js"></script>
+    <script>
+    // $('div').empty()
+    // empty()把盒子内部全部清空
+
+    // remove()  
+    // detach()
+
+    $('div h2').click(function(){
+        // $(this).remove().appendTo('div')        
+        // remove()  可以把加在元素上的事件给删除掉
+
+        $(this).detach().appendTo('div')
+        // detach保留了元素本身所加的事件
+    })
+    </script>
+</body>
+</html>

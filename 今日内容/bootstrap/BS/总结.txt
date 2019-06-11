@@ -1,0 +1,82 @@
+1:<meta name="viewport" content="width=device-width, initial-scale=1.0">
+2:在使用bootstrap的时候，需要把JQ提前引入   >1.9
+
+1、容器：container   container-fluid
+2、12栅格  
+col-xs-**==>小于768
+col-sm-**==>大于768小于992
+col-md-**==>大于992小于1200
+col-lg-**==>大于1200
+======>向小兼容
+.col-md-offset-2 列偏移
+.col-md-push-*  推
+.col-md-pull-*  拉
+2.排版 
+h1-h6
+<small>
+<b>
+.lead 类可以让段落突出显示
+
+3.table组
+.table==>赋予基本的样式 — 少量的内补（padding）和水平方向的分隔线
+.table-striped==>表格条纹
+.table-bordered==>表格边框
+.table-hover表格悬停
+.table-condensed 表格紧缩
+状态类：
+       .active
+       .success
+       .warning
+       .info
+       .danger
+       颜色的不同
+响应式表格 讲表格嵌套在以.table-responsive为类名的盒子下   
+
+表单:
+.form-control==>元素都将被默认设置宽度属性为 width: 100%;
+.form-group==>存放表单内容的，添加表单默认的样式
+.form-inline===》变为航快级元素
+.form-horizontal
+disabled===》禁用（差不多通用的）
+
+按钮：
+btn==>声明按钮，添加按钮基本样式
+btn-default==>默认的颜色
+btn-info   btn-success  btn-danger  btn-warning  btn-primary
+
+如果不是button  或者不是  input  type="button"   ,  div   a   role='button'
+
+大小:btn-lg   btn-sm   btn-md(默认)   btn-xs
+.btn-block变为块级元素   宽度编程100%
+
+disabled===》禁用
+
+图片：响应式图片:
+.img-responsive
+
+img-rounded==>圆角
+img-circle==>圆形
+img-thumbnail==>加个轮廓
+
+辅助类:
+文字颜色
+<p class="text-muted">...</p>
+<p class="text-primary">...</p>
+<p class="text-success">...</p>
+<p class="text-info">...</p>
+<p class="text-warning">...</p>
+<p class="text-danger">...</p>
+背景颜色
+<p class="bg-primary">...</p>
+<p class="bg-success">...</p>
+<p class="bg-info">...</p>
+<p class="bg-warning">...</p>
+<p class="bg-danger">...</p>
+
+向下的小三角：<span class="caret"></span>
+
+pull-left 通过添加一个类，可以将任意元素向左或向右浮动 
+pull-right
+注意：不能用在导航中，因为导航有  navbar-left    navbar-right
+center-block:为任意元素设置 display: block 属性并通过 margin 属性让其中的内容居中
+清除浮动：.clearfix

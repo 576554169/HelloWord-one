@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="./jquery.js"></script>
+	<title></title>
+	<script>
+		// JS
+	window.onload=function(){
+		var oIpt=document.getElementById('ipt');
+		var oBtn1=document.getElementById('btn1');
+		oBtn1.onclick=function(){
+			alert(oIpt.value)
+			oIpt.value=''
+		}
+	}
+	//  JQ
+	$(document).ready(function(){   //jQ的入口函数
+		// $==>JQ的核心函数
+		// $()==》函数执行过后得到的是JQ的核心对象
+        $('#btn2').click(function(){
+			// alert($('#ipt').value)  ==>不行，$('#ipt')是JQ对象，不能直接调用原生的方法
+			alert($('#ipt').val())  //val()
+			$('#ipt').val('')
+			// 读写合一
+
+		})
+	})
+
+	</script>
+
+</head>
+<body>
+	<input id="ipt" type="text">
+	<input id="btn1" type="button" value="原生JS方法">
+	<input id="btn2" type="button" value="jQuery方法">
+</body>
+</html>

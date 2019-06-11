@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        firstChild: 
+                IE6、7、8 第一个元素节点; 
+                非IE6、7、8：返回第一个元素节点或文本节点
+        firstElementChild:在非IE6/7/8中表示的第一个元素节点 
+        
+        lastChild    lastElementChild
+
+        nextSibling    nextElementSibling
+
+        previousSibling    previousElementSibling
+    -->
+        
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <script>
+    var oUl=document.getElementsByTagName('ul')[0];
+    // IE6-8
+    // oUl.firstChild.style.background='red'
+    oUl.firstElementChild.style.background='red'
+    </script>
+</body>
+</html>

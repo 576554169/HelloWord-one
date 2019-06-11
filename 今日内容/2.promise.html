@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr=[1,2,3]
+            // var [a,b,c]=arr
+            // then catch  all
+        var p1=Promise.resolve('aa')//aa就是一个Promise对象，而且是resolve
+        // all([])可以把promise 打包
+        var p2=Promise.resolve('bb')
+        var p3=Promise.resolve('cc')
+        Promise.all([p1,p2,p3]).then(function(res){
+            let [res1,res2,res3]=res
+            console.log(res[0],res[1],res[2])
+            console.log(res1,res2,res3)
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ovalue">
+    <input type="button" id="btn1" value="创建li">
+    <ul id="ul1"></ul>
+    <script>
+    var oVale=document.getElementById('ovalue')
+    var oBtn=document.getElementById('btn1');
+    var oUl=document.getElementById('ul1');
+    oBtn.onclick=function(){
+    //  创建子节点
+    var oLi=document.createElement('li')
+    oLi.innerHTML=oVale.value+'<a href="javascript:;">删除</a>'
+    // 插入到ul中
+    oUl.appendChild(oLi)
+    var oA=oLi.getElementsByTagName('a')[0];
+    oA.onclick=function(){
+        oUl.removeChild(this.parentNode)
+    }
+    }
+    </script>
+</body>
+</html>

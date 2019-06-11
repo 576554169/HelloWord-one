@@ -1,0 +1,39 @@
+
+
+1、怎么用BS
+ 1.必须添加==><meta name="viewport" content="width=device-width, initial-scale=1">
+ 2.一切功能都是通过class来实现，通过类名来赋予样式
+   1.下载解压放在项目文件夹中
+   2.因此CSS文件
+   3.引入JQ
+   4.引入BS的JS文件
+   5.复制粘贴
+2、BS的颜色区分
+   1.default
+   2.success
+   3.info
+   4.warning
+   5.danger
+   6.primary
+   (btn-info  bg-info)
+3、BS尺寸区分制度
+   1.lg
+   2.md
+   3.sm
+   4.xs
+   (btn-lg)
+4、BS的栅格系统
+   1.栅格系统写在.row下
+   2.XS:0-767
+   3.SM:768-992
+   4.md：992-1200
+   5.lg:1200-->>
+5、栅格系统位移
+   col-xx-offset-*
+   在XX屏幕尺寸下向右偏移*列
+6、隐藏和显示
+   hidden-xx  在xx尺寸下隐藏
+   visible-xx 在xx尺寸下显示
+7、BS的栅格系统的兼容
+    xs sm md lg   向小兼容==》没有写的尺寸会想小的找
+    

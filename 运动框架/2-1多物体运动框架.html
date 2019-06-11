@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        margin: 10px;
+        opacity: 0.3;
+        filter: alpha(opacity:30)
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+    var oBox=document.getElementsByTagName('div');
+    var alpha=30;
+
+    for(var i=0;i<oBox.length;i++){
+        oBox[i].alpha=30
+        oBox[i].onmouseover=function(){
+            startMove(this,100)
+        }
+        oBox[i].onmouseout=function(){
+            startMove(this,30)
+        }
+
+    }
+
+    // 多物体运动框架
+    function startMove(obj,iTarget){
+     clearInterval(obj.timer)
+     obj.timer=setInterval(function(){
+     //设置速度
+      var speed=(iTarget-obj.alpha)/6
+      speed=speed>0?Math.ceil(speed):Math.floor(speed)
+
+    //  运动
+        if(iTarget==obj.alpha){
+            clearInterval(obj.timer)
+        }else{
+            obj.alpha+=speed
+            obj.style.filter='alpha(opacity:'+obj.alpha+')';
+            obj.style.opacity=obj.alpha/100
+        }
+
+     },30)
+    }
+    </script>
+</body>
+</html>

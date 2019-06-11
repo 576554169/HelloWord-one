@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #div{
+        width: 100px;
+        height: 200px;
+        background: red;
+        position: absolute;
+        right: 0;
+        bottom: 0px;
+    }
+    body{
+        height: 2000px;
+    }
+    </style>
+</head>
+<body >
+    <div id="div"></div>
+
+    <script>
+    window.onscroll=function(){
+    var scrollT=document.documentElement.scrollTop||document.body.scrollTop;      
+    startMove(parseInt(document.documentElement.clientHeight-oBox.offsetHeight+scrollT))
+        
+    }
+    var timer=null
+    var oBox=document.getElementById('div')
+    function startMove(iTarget){
+       clearInterval(timer)
+       timer=setInterval(function(){
+         var speed=(iTarget-oBox.offsetTop)/5
+         speed=speed>0?Math.ceil(speed):Math.floor(speed)
+
+         if(iTarget==oBox.offsetTop){
+            clearInterval(timer)
+         }else{
+            oBox.style.top=oBox.offsetTop+speed+'px';
+         }
+       },30)
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input id="user" type="text" name="user"/>
+			<input id="pass" type="password" name="pass"/>
+			<input id="btn" type="button" value="提交"/>
+		</form>
+	</body>
+	<script>
+		var oBtn = document.getElementById('btn');
+		var oUser = document.getElementById('user');
+		var oPass = document.getElementById('pass');
+		oBtn.onclick = function(){
+			
+			setCookie(oUser.value,oPass.value,7);
+			window.location.href= './1.toggle.html';
+			// return false;
+		}
+		function setCookie (name,value,iDay) {
+			var oDate=new Date()
+			oDate.setDate(oDate.getDate()+iDay);
+			document.cookie=name+'='+pass+';expires='+oDate;
+		}	
+		
+	</script>
+</html>

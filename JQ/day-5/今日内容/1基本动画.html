@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../jquery.js"></script>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+
+    <div></div>
+    <!-- 
+       hide(1000)
+       show(1000)
+       toggle(1000)
+
+       slideDown()
+       slideUp()
+       slideToggle()
+
+       fadeIn()
+       fadeOut()
+       fadeToggle()
+
+       fadeTo()
+     -->
+<script>
+
+$('div').click(function(){
+    $(this).fadeTo(1000,0.5)
+})
+</script>
+    </body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .screen-banner {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .all-screen {
+            top: 0;
+            position: absolute;
+            transition: top 0.5s;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var screenBanner = document.getElementsByClassName('screen-banner')[0];
+            var allScreen = document.getElementsByClassName('all-screen')[0];
+            var screenDiv = document.getElementsByClassName('screen-one');
+            var screenW, screenH
+            // 设置宽高
+            function resize() {
+                screenW = document.documentElement.clientWidth
+                screenH = document.documentElement.clientHeight
+                // 设置每种盒子的宽高
+                screenBanner.style.width = allScreen.style.width = screenW + 'px'
+                screenBanner.style.height = screenH + 'px'
+                allScreen.style.height = screenDiv.length * screenH + 'px'
+
+                // screenDiv
+                for (var i = 0; i < screenDiv.length; i++) {
+                    screenDiv[i].style.width = screenW + 'px';
+                    screenDiv[i].style.height = screenH + 'px'
+                }
+            }
+            resize()
+            // 当窗口发生改变的时候  执行   重新获取宽高
+            window.onresize = resize
+
+            // 定义索引变量，匹配每一张的索引
+            var page = 0;
+
+            // 假设法，判断动画执行
+            var running = false;
+            // false时候  可以滑动
+            // true时候    不可滑动
+
+
+
+            // 向上滑动
+            function scrollUp() {
+                if (!running) {
+                    running = true
+                    setTimeout(function () {
+                        running = false;
+                    }, 1000)
+                    if (page > 0) {
+                        page--;
+                        allScreen.style.top = -page * screenH + 'px';
+                    }
+                }
+            }
+
+            function scrollDown() {
+                if (!running) {
+                    running = true
+                    setTimeout(function () {
+                        running = false;
+                    }, 1000)
+                    if (page < screenDiv.length - 1) {
+                        page++;
+                        allScreen.style.top = -page * screenH + 'px';
+                    }
+                }
+            }
+
+            function myEvent(obj, ev, fn) {
+                if (obj.addEventListener) {
+                    obj.addEventListener(ev, fn)
+                } else {
+                    obj.attachEvent('on' + ev, fn)
+                }
+            }
+
+            // 添加滚轮事件
+            // IE GOOGLE   onmousewheel
+            myEvent(window, 'mousewheel', mousewheel)
+            // 火狐
+            myEvent(window, "DOMMouseScroll", mousewheel)
+
+            function mousewheel(ev) {
+                var oEvent = ev || event
+                if (oEvent.wheelDelta) {
+                    if (oEvent.wheelDelta > 0) {
+                        scrollUp()
+                    } else {
+                        scrollDown()
+                    }
+                } else if (oEvent.detail) {
+                    if (oEvent.detail > 0) {
+                        scrollDown()
+                    } else {
+                        scrollUp()
+                    }
+                }
+                //  谷歌
+                //    console.log(oEvent.wheelDelta)
+                // 火狐
+                // console.log(oEvent.detail)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="screen-banner">
+        <div class="all-screen">
+            <div class="screen-one" style="width: 100%; height: 100%; background: red;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: blue;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: green;"></div>
+            <div class="screen-one" style="width: 100%; height: 100%; background: gray;"></div>
+        </div>
+    </div>
+</body>
+
+</html>

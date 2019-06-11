@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;padding: 0;
+
+    }
+    div{
+        width: 100px;
+        height: 150px;
+        overflow: auto;
+    }
+    </style>
+</head>
+<body style="height:2000px">
+    <!-- scrollTop -->
+    <button>div的scrolltop</button>
+    <button>文档的scrolltop</button>
+    <div>
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+        欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟  欢迎来到英雄联盟
+
+    </div>
+    <script src="../jquery.js"></script>
+    <script>
+     console.log($('div').scrollTop())
+     console.log($('html,body').scrollTop())
+
+
+
+    $('button:first').click(function(){
+        $('div').scrollTop(400)
+    })
+    $('button:last').click(function(){
+        $('html,body').scrollTop(500)
+    })
+    </script>
+</body>
+</html>

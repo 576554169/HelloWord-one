@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some==>遍历数组，观察是否存在满足条件的元素，如果存在，返回true
+        var arr=['apple','banana','1','lvv'];    
+        var newArr=arr.some(function(i,index){
+            return typeof i=='number'
+        }) 
+        console.log(newArr)
+    </script>
+</body>
+</html>

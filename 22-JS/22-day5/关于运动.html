@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+    </style>
+</head>
+<body>
+    <button id="btn">运动</button>
+    <div id="box"></div>
+    <script>
+        // 1、运动到300处停止
+        // 2、帕金森综合征
+        // 3、关于定时的工作“BUG”
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementById('box');
+    var time=null
+    oBtn.onclick=function(){
+        // 添加定时器
+       var speed=7;
+        clearInterval(time)
+        time=setInterval(function(){
+            if(oBox.offsetLeft>=300){
+                clearInterval(time)
+            }else{
+                oBox.style.left=oBox.offsetLeft+speed+'px';   
+            }                               
+        },30)
+        
+    }
+    </script>
+</body>
+</html>

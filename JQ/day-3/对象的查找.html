@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    children:==>子代
+    find;    ==》后代
+    parent;
+    prevAll;
+    prev;
+    nextAll;
+    next;
+    silibings; 
+    
+    都有隐式遍历的特征
+-->
+
+    <ul>
+        <li class="a">1</li>      
+
+        <li class="b">2
+           <span>a</span>
+        </li>
+
+        <li>3</li>
+        <span>b</span>
+        <p>我是p</p>
+        <li class="c">4</li>
+        <li>5</li>
+    </ul>
+
+    <script src="./jquery.js"></script>
+    <script>
+    // $('ul').children('span').css('color','red');
+
+
+    // $('ul').find('span').css('background','red')
+
+    // $('ul').children('span').parent().css('color','red');
+
+    // $('ul').find('li').eq(3).next().css('background','red')
+
+    // $('ul').find('li').eq(3).siblings('li').css('background','red')
+    // 除了本身以外的所有兄弟元素
+    </script>
+</body>
+</html>

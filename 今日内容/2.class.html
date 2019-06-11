@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Person{
+        constructor(name,age){//构造方法，构造函数 如果不传construcor,但是只要执行new，系统会自动补上这个
+            this.name=name;
+            this.age=age;
+        }
+        showName(){
+            return `名字是:${this.name}`
+        }
+        showAge(){
+            return `年龄是:${this.age}`
+        }
+    }    
+    var p1=new Person('wpd',30)
+   
+    console.log(p1.showName())
+    console.log(typeof Person)
+    console.log(Person.prototype)
+    // class  相当于一个  语法糖
+    //   在用Class的时候   不存在变量提升啊 
+
+ 
+    
+//  原生JS存在变量提升
+    //  var p1 = new Person('lvv', 18)
+
+    //  function Person(name, age) {
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+    //     Object.assign(Person.prototype, {
+    //         showName:function () {
+    //             return `名字是：${this.name}`
+    //         },
+    //         showAge:function () {
+    //             return `名字是：${this.age}`
+    //         },
+    //         showAge:function () {
+    //             return `名字是：${this.age}`
+    //         }
+    //     })
+
+    //     console.log(p1.showName())
+    </script>
+</body>
+</html>

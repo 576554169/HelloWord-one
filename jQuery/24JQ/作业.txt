@@ -1,0 +1,113 @@
+对象的核心方法
+index()   索引值
+size()/length   多少
+each()   遍历
+get(index)/[index]  找到具体的位置，值
+
+对属性的操作
+hasClass()   检查匹配元素是否有指定类名
+addClass()   为匹配的元素添加指定类名
+removeClass()  从匹配的元素中删除全部或者指定的类
+toggoleClass()
+attr()
+removeattr()
+prop()
+removeprop()
+
+对文本的操作
+html()
+val()
+text()
+
+对象的查询与筛选
+find()==>后代
+children()==》子代
+parent()==》父级
+
+prev()===》前边一个
+prevall()==》前边的所有        兄弟元素
+next()==》后边的一个
+nextAll()==》后边的所有
+
+sibilings()====》除了自己以外的兄弟元素
+
+has()
+filter()
+not()
+eq()
+first()
+last()
+is()
+
+效果
+show()
+hide()
+toggle()
+slideDown()
+slideUp()
+slideToggle
+fadeIn()
+fadeOut()
+fadetoggle()
+fadeTo()
+
+事件
+hover()
+
+元素的大小
+width()
+height()
+innerWidth()
+innerHeight()
+outerWidth()
+outerHeight()
+
+元素的状态
+:hidden
+:visiblity
+
+css()
+$(this)
+focus()==>激活
+
+文档的插入
+append()
+appendTo()
+prepend()
+prependTo()
+
+after()
+insertAfter()
+before()
+insertBefore()
+
+文档的包裹
+wrap()   用某个元素包裹匹配元素
+unwrap()==>   清除包裹匹配元素得父级
+wrapInner()    匹配元素得内容被什么用来包裹
+wrapAll()   用某个元素将所有的元素包裹起来
+
+文档的删除
+empty()清空
+remove()
+detach()  对于匹配元素进行删除
+
+文档的克隆
+clone()    克隆你所匹配的元素
+
+文档的替换
+replaceWith()
+replaceAll()
+
+元素的位置
+offset() 基于文档
+position()  基于父级定位元素
+scrollTop()
+scrollLeft()
+
+基本选择器
+层次选择器
+表单选择器
+过滤选择器
+
+

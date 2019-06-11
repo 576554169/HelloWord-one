@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+      margin: 0;padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 10px;
+        /* border: 2px solid black; */
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <div id="box">向左移动</div>
+    <div id="box2">宽度变宽</div>
+
+    <script>
+    //    oBox2.style.width=oBox2.offsetWidth-1+'px'
+ 
+    var oBox=document.getElementById('box');
+    var oBox2=document.getElementById('box2');
+    var timer=null
+    // offsetWidth  会包括盒模型
+
+    oBox2.onmouseover=function(){
+        clearInterval(timer)
+        timer=setInterval(function(){
+            // oBox2.style.width=oBox2.offsetWidth-4+'px';
+            // oBox2.style.height=oBox2.offsetHeight-4+'px'
+            if(oBox2.style.width==200+'px'||oBox2.style.height==300+'px'){
+                clearInterval(timer)
+            }else{
+                oBox2.style.width=oBox2.offsetWidth+4+'px';
+                oBox2.style.height=oBox2.offsetHeight+4+'px'
+            }
+                },30)
+            }
+    oBox2.onmouseout = function(){
+        clearInterval(timer)
+        // oBox2.style.width='0'
+
+        timer=setInterval(function(){
+            if(oBox2.style.width==0+'px'||oBox2.style.height==0+'px'){
+                clearInterval(timer)
+            }else{
+                oBox2.style.width=oBox2.offsetWidth-4+'px';
+                oBox2.style.height=oBox2.offsetHeight-4+'px'
+            }
+     },30)
+}
+    </script>
+</body>
+</html>

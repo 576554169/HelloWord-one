@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var str='sdfww 6456 +--=qwer';
+    // ===>\d  数字  
+    // 在正则中存在转译符  \
+    // var r=/\d/ 
+    // console.log(str.search(r))
+
+    // search：返回字符第一次出现的索引值
+
+    // 把所有满足正则的字符串 都提取出来  match
+    var r=/\d+/ 
+    // +   一串  若干
+    console.log(str.match(r))
+    </script>
+</body>
+</html>

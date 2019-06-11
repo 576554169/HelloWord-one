@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 谷歌  火狐  IE9  addEventListener
+        // document.addEventListener('click',function(){
+        //     alert(1)
+        // })   
+
+
+        // IE6-8           attachEvent
+        //    document.attachEvent('onclick',function(){
+        //        alert(1)
+        //    })
+
+        function myEvent(obj, v, fn) {
+            if (obj.addEventListener) {
+                obj.addEventListener(v, fn, false)
+            } else {
+                obj.attachEvent('on' + v, fn)
+            }
+        }
+        function show(){
+            alert(1)
+        }
+        myEvent(document,'click',show)
+    </script>
+</body>
+
+</html>

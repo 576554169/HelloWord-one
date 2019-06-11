@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./ajax.js"></script>
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var oIpt = document.getElementById('ipt');
+            var oBtn1 = document.getElementById('btn1');
+            oBtn1.onclick = function(){
+                alert(oIpt.value)
+                oIpt.value=''
+            }
+        }
+        $(document).ready(function(){
+            $('#btn2').click(function(){
+                alert($('#ipt').val())
+                $('ipt').val('')
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <input id="ipt" type="text">
+    <input id="btn1" type="button" value="原生js方法">
+    <input id="btn2" type="button" value="jquery方法">
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+        promise==>承诺  许诺
+        ===》专门用来解决异步回调的
+        准备状态
+        fulfilled==》成功   resolve
+        rejected==》失败的   rejected
+    */ 
+   var a=2
+   var promise=new Promise(function(resolve,reject){
+     if(a==10){
+        resolve('成功')
+     }else{
+         reject('失败')
+     }
+   })
+// then回调，两个参数
+// 第一个是成功后执行的函数，第二个是失败后执行的函数
+   promise.then(res=>{
+       console.log(res)
+   }).catch(err=>{
+       console.log(err)
+   })
+// catch==》捕获错误的
+   
+    </script>
+</body>
+</html>

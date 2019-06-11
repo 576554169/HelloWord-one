@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				filter: alpha(opacity:30);
+				/* IE */
+				opacity:0.3;
+				/* 谷歌  火狐 */
+			}
+		</style>
+	</head>
+	<body>
+        
+		<div id="div1" style="background:red;"></div>		
+        <script type="text/javascript">
+        // 变量==》存储咱们想要的
+        // var 变量=值===》    var 内存=内存地址
+        var oDiv=document.getElementById('div1');
+        var timer=null;
+        var speed=null;
+        // 没有办法直接拿到透明度
+        var alpha=30;//变量存储透明度
+        function startMove(iTarget){
+            clearInterval(timer)
+            timer=setInterval(function(){
+            // 定义速度
+            if(alpha>iTarget){
+               speed=-10
+            }else{
+               speed=10
+            }
+            // 定义运动 
+            if(alpha==iTarget){
+             clearInterval(timer)
+            }else{
+            alpha+=speed
+            oDiv.style.filter='alpha(opacity:'+alpha+')'
+            oDiv.style.opacity=alpha/100;
+            }
+            },30)
+        }
+		oDiv.onmouseover=function(){
+            startMove(100)
+        }
+        oDiv.onmouseout=function(){
+            startMove(30)
+        }
+		</script>
+	</body>
+</html>

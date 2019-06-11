@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- new -->
+    <script>
+    // 任何函数前边都可以加new
+
+    // function show(){
+    //     alert(this)
+    // }
+    // show()   //this指向window
+    // new show()   //this 指向对象
+
+    function CreatePerson(name,tel){
+          //原料 
+        //   var obj=new Object()
+        //   this=new Object()
+          //加工
+          this.name=name;
+          this.tel=tel;
+     
+         // 出厂
+        //  return obj
+
+        // return this
+      }
+
+           
+      CreatePerson.prototype.getName=function(){
+              alert("我叫"+this.name)
+          }
+      CreatePerson.prototype.getTel=function(){
+              alert("我的号码是"+this.tel)
+          }
+      var obj1=new CreatePerson('yhq','18831606929')
+      var obj2=new CreatePerson('lvv','11011011011')
+    //   obj1.getTel()
+    //   obj2.getTel()
+      console.log(obj1.getTel===obj2.getTel)
+    
+    </script>
+</body>
+</html>

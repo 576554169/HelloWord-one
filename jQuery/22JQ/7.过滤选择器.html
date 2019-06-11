@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	
+	<p>第一个P</p>
+	<p id="select">第二个P</p>
+	<p class="select">第三个P</p>
+	<h3>我是h3</h3>
+	<h4>我是h4</h4>
+	<input type="text" value="123">
+
+	<!--
+		需求
+			1.第一个p标签
+			2.最后一个p标签  
+			3.除了ID为select的p标签
+			4.奇数p
+			5.偶数=
+			6.第二个p标签				
+			7.索引大于1的p标签 (从零开始)
+			8.索引小于1p
+			9.标题标签				
+			10.H4标题		 				
+			11.:focus过滤器必须是网页初始状态就已经被激活的焦点元素,不能是通过鼠标点击或Tab键激活
+			12.选取内容为第一个p的 p 元素
+	-->
+
+	<script src="./jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function () {
+			// 1.第一个p标签
+			// $('p:first').css({'background':'red'})
+
+			// 2.最后一个p标签  
+			// $('p:last').css({'background':'red'})
+
+			// 3.除了ID为select的p标签
+			// $('p:not(#select)').css({'background':'red'})
+			// $('p').not('#select').css({'background':'red'})
+
+			// 4.奇数p
+            //    $('p:odd').css({'background':'red'})
+
+			// 5.偶数=
+			// $('p:even').css({'background':'red'})
+
+			// 6.第二个p标签
+			// $('p:eq(1)').css({'background':'red'})
+			//  $('p').eq(1).css({'background':'red'})
+			//  $('p')[1].style.background='red'
+			
+			// 7.索引大于1的p标签 (从零开始)
+            // $('p:gt(1)').css({'background':'red'})
+
+			// 8.索引小于1p
+			// $('p:lt(1)').css({'background':'red'})
+
+			// 9.标题标签
+			// $(':header').css({'background':'red'})
+			
+			// 10.H4标题
+			// $('h4').css({'background':'red'})	 
+			// $('h4:header ').css({'background':'red'})
+
+			// 11.:focus过滤器必须是网页初始状态就已经被激活的焦点元素,不能是通过鼠标点击或Tab键激活
+			// $('input').focus()
+			// $(':focus').css('background','red')
+
+
+			// 12.选取内容为第一个p的 p 元素
+			// $('p:contains(第一个P)').css('background','red')
+		});
+	</script>
+</body>
+
+</html>

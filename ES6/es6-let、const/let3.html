@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let 无顶层作用域=>如果某个函数体需要取到window下的变量，若这个变量是let声明的，则取不到
+        // this==>谁调用它  指向谁
+
+
+        let b=1
+        let json={
+            b:2,
+            a:function(){
+                setTimeout(function(){
+                console.log(this.b)
+                },10)
+            }
+        }
+    json.a()
+
+
+
+
+
+
+        // var json={
+        //     a:this,
+        //     b:function(){
+        //        setInterval(function(){
+        //         console.log(this)
+        //         console.log(this.a)
+        //        },100)
+        //     }
+        // }
+        // console.log(json.b())
+
+        // var show=json.b
+        // show()
+
+        // console.log(json.a)
+        // console.log(json.c.d)
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       get：
+           可以把数据拼接在url路劲后面
+           不安全
+           存在缓存
+           可传输数据量小
+           （用来获取数据）
+        post：
+           把数据放在虚拟载体后边
+           相对于get来说比较安全
+           可传输量较大
+           （post是用来想服务器发送数据的）
+     -->
+    <form action="http://www.taobao.com" method="post">
+        用户名：<input name="userName" type="text">
+        密码：<input name="passWord" type="passWord">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

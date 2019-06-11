@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one {
+            width: 250px;
+            height: 250px;
+            border: 1px solid;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .mini {
+            width: 70px;
+            height: 70px;
+            border: 1px solid;
+            float: left;
+        }
+        #three div:nth-child(4){
+            width: 70px;
+            height: 70px;
+            border: 1px solid;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>子元素过滤选择器：</h1>
+    <button type="button" id="b1">选择每个class为one的div父元素下的第二个子元素</button>
+    <button type="button" id="b2">选择每个class为one的div父元素下的第一个子元素</button>
+    <button type="button" id="b3">选择每个class为one的div父元素下的最后一个子元素</button>
+    <button type="button" id="b4">如果class为one的div父元素下的仅仅只有一个子元素，那么选中这个子元素</button>
+    <br>
+
+
+    <div id="one" class="one">
+        id为one,class为one的div
+        <div class="mini">
+            class为mini
+        </div>
+    </div>
+    <div id="two" class="one" title="test">
+        id为two，class为one，title为test的div
+        <div class="mini" title="other">
+            class为mini，title为other
+        </div>
+        <div class="mini" title="test">
+            class为mini，title为test
+        </div>
+    </div>
+
+
+    <div class="one" id="three">
+        <div class="mini">
+            class为mini
+        </div>
+        <div class="mini">
+            class为mini
+        </div>
+        <div class="mini">
+            class为mini
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <div class="one" >
+        
+    </div>
+
+
+    <script src="./jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#b1').click(function(){
+                $('div.one :nth-child(2)').css("background","red")
+            })
+            $('#b2').click(function(){
+                $('div.one :nth-child(1)').css("background","blue")
+            })
+            $('#b3').click(function(){
+                $('div.one :last-child').css("background","yellow")
+            })
+            $('#b4').click(function(){
+                $('div.one :only-child').css("background","pink")
+            })
+
+
+           
+
+
+
+        })
+    </script>
+   
+</body>
+
+</html>

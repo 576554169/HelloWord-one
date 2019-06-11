@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- cookie(客户端)    session(服务端) -->
+    <!-- 
+    H5新增 webstorage
+    低版本浏览器不兼容
+
+    localstorage
+    ==>回话周期  是永久，除了用户自己把localstorage清除
+    localstorage可以存储数据的大小是  5M
+    浏览器会把localstorage的内容识别为 字符串
+    ***对字符串的读取，消耗内存
+
+    sessionstrage
+    ==>回话周期  仅存在于当前回话，用户关闭页面的时候，清除缓存
+    -->
+    <script>
+    if(!window.localStorage){
+       alert('您的浏览器不支持localstorage')
+    }else{
+        // 存入
+        var storage=window.localStorage;
+        storage['b']=2;//1
+        storage.a=1;//2
+        storage.setItem('c',3)//3  官方推荐写法
+        
+       //提取
+       var ob=storage['b'];
+    //    console.log(ob)
+
+       var oa= storage.a
+    //    console.log(oa)
+
+       var oc=storage.getItem('c')  //官方推荐写法
+    //    console.log(oc)
+
+       //修改==》重新赋值  
+       storage.c=5
+    
+       //删除
+
+       storage.removeItem('a')//删除单条
+       //storage.clear()//清空localstorage
+    
+       //  键获取
+       for(var i=0;i<storage.length;i++){
+           var key=storage.key(i)
+           console.log(key)
+       }      
+        // console.log(storage)
+    }
+    </script>
+</body>
+</html>

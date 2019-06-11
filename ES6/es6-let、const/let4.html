@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="button" value="a">
+    <input type="button" value="b">
+    <input type="button" value="c">
+    <script>
+        var oIpt = document.querySelectorAll('input')
+         
+        for(let i=0;i<oIpt.length;i++){
+            oIpt[i].onclick=function(){
+                alert(i)
+            }
+        }
+
+
+
+        // for (var i = 0; i < oIpt.length; i++) {
+        //     oIpt[i].index = i
+        //     oIpt[i].onclick = function () {
+        //         alert(this.index)
+        //     }
+        // }
+
+
+
+
+        // 块级作用域
+    // var arr=[]
+    // for(let i=0;i<10;i++){
+    //     arr[i]=function(){
+    //         console.log(i)
+    //     }
+    // }   
+    // arr[5]() 
+    </script>
+</body>
+
+</html>

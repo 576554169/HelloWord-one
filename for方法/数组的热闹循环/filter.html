@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // filter==>过滤   将符合条件的元素  过滤出来
+    var arr=['apple','banana',1,'lvv'];   
+    var newArr=arr.filter(function(i,index){
+         return typeof i=="string"
+    }) 
+    console.log(newArr)
+    </script>
+</body>
+</html>

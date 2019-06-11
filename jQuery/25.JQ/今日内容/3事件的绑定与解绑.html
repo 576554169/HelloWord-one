@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			.out{
+				width: 200px;
+				height: 200px;
+				background: blue;
+				position: relative;
+			}
+			.inner{
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				top: 50px;
+			}
+			#BOX{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+			#btn3{
+				position: absolute;
+				top: 1000px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+		 1.事件绑定（2种）：
+		 *eventName(function(){})
+		 绑定对应事件名的监听
+		 *on(eventName,function(){})
+		 通用的绑定事件监听，例如：$('#div').on('click',function())
+		 *优缺点：
+		 eventName:编码方便，但只能加一个监听，且有的事件监听不支持
+		 on：编码不方便，可以添加多个监听，且更通用
+		 2.事件解绑：
+		 off(eventName)
+		 3.事件的坐标
+		 *event.clientX,event.clientY 相对于视口的左上角
+		 *event.pageX,event.pageY   相对于页面左上角
+		 *event.offsetX,eventoffsetY  相对于发生事件元素的左上角
+		 4.事件相关处理
+		 *停止事件冒泡：event.stopPropagation()
+		 *组织事件默认行为：event.preventDefault()
+		 -->
+		<div class="out">
+			外部div
+			<div class="inner">内部div</div>
+		</div>
+		
+		<div class="divBtn">
+			<button id="btn1">取消绑定所有事件</button>
+			<button id="btn2">取消绑定mouseover事件</button>
+		    <button id="btn3">测试事件坐标</button>
+			<a href="http://www.baidu.com" id="test4">百度一下</a>
+		</div>
+		<div id="BOX"></div>
+		<!-- 
+>		1.给.out绑定点击监听（两种） 
+		2.给.inner绑定鼠标移入移出的时间监听(3)
+		3.点击btn1解除.inner上的所有事件监听
+		4.点击btn2解除.inner上的mouseover事件
+		5.点击btn3得到事件坐标
+		6.点击.inner区域，外部点击监听不响应
+		 -->
+		<script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+		
+			// $("#BOX").on("click mouseout",function(){
+			// 	alert("asdcxz");
+			// })
+				// $('#BOX').on({
+				// 	'click':function(){
+				// 		alert("asdcxz");
+				// 	},
+				// 	'mouseout':function(){
+				// 		$('#BOX').css('background','pink')
+				// 	}
+				// })
+				  
+				$('#BOX').click(function(){
+					alert(1)
+				})
+				$('#BOX').off("click")
+
+				$("#btn3").click(function(event){
+					console.log(event.clientX,event.clientY)
+					console.log(event.pageX,event.pageY)
+					console.log(event.offsetX,event.offsetY)
+				})
+				$(".out").on("click",function(){
+					
+					alert(1)
+				})
+				$(".inner").on("click",function(e){
+					e.stopPropagation()
+					alert(1)
+				})
+				$("#test4").on("click",function(e){
+					e.preventDefault();
+				})
+	    </script>
+	</body>
+</html>

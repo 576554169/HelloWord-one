@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1、数据交互，调接口，渲染页面的时候===>Ajax
+        2、表格中的Dom
+     -->
+     <table id="tab" border="1" width='400'>
+         <thead>
+             <td>ID</td>
+             <td>姓名</td>
+             <td>年龄</td>
+         </thead>
+         <tbody>            
+             <tr>
+                  <td>1</td>
+                  <td>杨海泉</td>
+                  <td>30</td>
+             </tr>
+             <tr>
+                <td>2</td>
+                <td>王平东</td>
+                <td>50</td>
+           </tr>
+           <tr>
+            <td>3</td>
+            <td>詹晓静</td>
+            <td>19</td>
+           </tr>
+           <tr>
+            <td>4</td>
+            <td>李威威</td>
+            <td>17</td>
+           </tr>
+           <tr>
+            <td>5</td>
+            <td>梁蕾</td>
+            <td>19</td>
+           </tr>
+         </tbody>
+     </table>
+
+     <script>
+     var oTab=document.getElementById('tab');
+// alert(oTab.getElementsByTagName('tbody')[0].getElementsByTagName('tr')[1].getElementsByTagName('td')[1].innerHTML)
+    alert(oTab.tBodies[0].rows[1].cells[1].innerHTML)   
+    // tBodies  
+    // rows
+    // cells
+     </script>
+</body>
+</html>

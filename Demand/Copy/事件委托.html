@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+            <li>春望</li>
+            <li>杜甫</li>
+        <li>国破山河在，城春草木深</li>
+        <li>感时花溅泪，恨别鸟惊心</li>
+        <li>烽火连三月，家书抵万金</li>
+        <li>白头搔更短，浑欲不胜安</li>
+       
+    </ul>
+    <button id="btn">西北望，射天狼</button>
+    <script src="./jquery.js"></script>
+    <script>
+    $('ul').delegate('li','click',function(){
+        $(this).css({
+            'background':'red'
+        })
+    })
+    
+
+
+    $('#btn').click(function(){
+        $('<li>古时月书</li>').prependTo('ul')
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!-- 
+for
+forin==>遍历对象中的属性
+foreach==>没有返回值，用来替代for循环，并且第二个参数可以改变this指向
+
+map():有返回值，返回一个新的数组，并且原数组不改变，
+filter()：过滤==》输出满足过滤条件的元素，组成一个新的数组
+some()：遍历数组，观察是否存在满足条件的元素，如果存在，返回true
+every()：遍历数组中每一个元素是否全部满足条件，如果全部满足，则返回true
+reduce()
+reduceRight()
+
+
+
+
+     -->
+    <script>
+        // reduceRight
+    var arr=[2,3,2,1];
+    var newArr=arr.reduceRight(function(prev,next,index){
+        // console.log(index)
+        // console.log(next)
+        return prev**next
+       
+    })
+    console.log(newArr)
+
+
+
+    </script>
+</body>
+</html>

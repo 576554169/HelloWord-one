@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>层次选择器</title>
+	</head>
+	<body>
+		<!-- 层次选择器
+		 1、ancestor descendant
+		 在给定的祖先元素下匹配所有的后代元素
+		 2、parent>child
+		 在给定的父元素下匹配所有的子元素
+		 3、prev+next
+		 匹配所有进阶在prev元素后的next元素
+		 4、prev~sibling
+		 匹配prev元素之后所有siblings元素
+		 -->
+		<ul>
+			<li>AAAAA</li>
+			<li class="box">CCCCC</li>
+			<li title="hello"><span>BBBBB</span></li>
+			<li title="hello"><span class="box">DDDDD</span></li>
+	        <span>EEEEE</span>	
+		</ul>
+		<!-- 
+		 需求：
+		 *选中ul下的所有span
+		 *选中ul下的所有子元素span
+		 *选中class为box的下一个li 
+		 *选中ul下的class为box的元素后面的所有兄弟元素
+		 -->
+		 
+		 <script src="./jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//  *选中ul下的所有span
+	//    $('ul span').css('background','red')
+		
+		//  *选中ul下的所有子元素span
+        //   $('ul>span').css('background','red')
+
+		//  *选中class为box的下一个li 
+        //  $('.box+li').css('background','red')
+
+		//  *选中ul下的class为box的元素后面的所有兄弟元素
+		$('ul .box~*').css('background','red')
+	</script>
+	</body>
+</html>

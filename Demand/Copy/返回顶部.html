@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <style>
+    *{
+        margin: 0;padding: 0;
+    }
+    #box{
+        width: 30px;
+        height: 40px;
+        position: fixed;
+        right: 20px;
+        top: 50px;
+        border: 1px solid;
+        font-size: 12px;
+        display: none;
+    }
+    </style>
+</head>
+<body style="height:5000px;">
+    <div id="box">返回顶部</div>
+    <script src="./jquery.js"></script>
+    <script>
+        $(window).scroll(function(){
+            if($('body,html').scrollTop()>=300){
+                $('#box').fadeIn(300)
+            }else{
+                $('#box').fadeOut(300)
+            }
+        })
+        $('#box').click(function(){
+            $('body,html').animate({'scrollTop':0},500,function(){
+                $('body,html').css({'background':'red'})
+            })
+
+        })
+    </script>
+</body>
+</html>

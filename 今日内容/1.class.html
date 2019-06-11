@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // class==>
+
+        function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // Person.prototype.showName=function(){
+        //     return `名字是：${this.name}`
+        // }
+        // Person.prototype.showAge=function(){
+        //     return `名字是：${this.age}`
+        // }
+        Object.assign(Person.prototype, {
+            showName:function () {
+                return `名字是：${this.name}`
+            },
+            showAge:function () {
+                return `名字是：${this.age}`
+            },
+            showAge:function () {
+                return `名字是：${this.age}`
+            }
+        })
+        var p1 = new Person('lvv', 18)
+        console.log(p1.showName())
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 事件参数 -->
+    <script>
+        // document.onclick=function(){
+        //     alert(event.clientX)
+        //     // IE 谷歌  event
+        //     // 火狐   x=event
+        //     // JS第二定律：==》凡是好东西，都不兼容
+        // }
+        // ev事件参数，用来记录某些特定的动作，比如鼠标，键盘
+        document.onclick=function(ev){
+           var oEvent=ev||event
+           alert(oEvent.clientX)
+        }
+        // ev，在火狐以及谷歌以及IE9--，兼容良好
+        // 但是在低版本浏览器上  仍然存在兼容问题
+    </script>
+</body>
+</html>

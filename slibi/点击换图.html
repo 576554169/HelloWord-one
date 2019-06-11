@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .banner,
+        .banner-one {
+            width: 800px;
+            height: 300px;
+        }
+
+        .blue {
+            background: blue;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .yellow {
+            background: yellow;
+        }
+
+        .banner {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-all {
+            width: 3200px;
+            position: absolute;
+        }
+
+        .banner-one {
+            float: left;
+        }
+
+        .banner-one:first-child {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="banner-all">
+            <div class="banner-one blue"></div>
+            <div class="banner-one green"></div>
+            <div class="banner-one red"></div>
+            <div class="banner-one yellow"></div>
+        </div>
+    </div>
+    <button class="btn">切换</button>
+    <button class="btn1">切换1</button>
+    <script src="./jquery.js"></script>
+    <script>
+        // $(function(){
+            
+        // })
+        $('.btn').click(function(){
+                
+                    $('.banner-one').first().appendTo('.banner-all');
+                    $('.banner-all').css({'left':0});
+                    $('.banner-all').animate({'right':800},300)
+                
+            })
+        $('.btn1').click(function(){
+            $('.banner-one').last().prependTo('.banner-all');
+            $('.banner-all').css({'left':-800})
+            $('.banner-one').animate({'left':0},300)
+        })
+    </script>
+
+
+</body>
+
+</html>

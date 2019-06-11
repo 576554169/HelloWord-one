@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        1、数据交互，调接口，渲染页面的时候===>Ajax
+        2、表格中的Dom
+     -->
+     <table id="tab" border="1" width='400'>
+         <thead>
+             <td>ID</td>
+             <td>姓名</td>
+             <td>年龄</td>
+         </thead>
+         <tbody>            
+             <tr>
+                  <td>1</td>
+                  <td>杨海泉</td>
+                  <td>30</td>
+             </tr>
+             <tr>
+                <td>2</td>
+                <td>王平东</td>
+                <td>50</td>
+           </tr>
+           <tr>
+            <td>3</td>
+            <td>詹晓静</td>
+            <td>19</td>
+           </tr>
+           <tr>
+            <td>4</td>
+            <td>李威威</td>
+            <td>17</td>
+           </tr>
+           <tr>
+            <td>5</td>
+            <td>梁蕾</td>
+            <td>19</td>
+           </tr>
+         </tbody>
+     </table>
+
+     <script>
+     var oTab=document.getElementById('tab');
+     var oldColor=null
+      for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+        oTab.tBodies[0].rows[i].onmouseover=function(){
+            oldColor=this.style.background
+            this.style.background='pink'
+        }
+        oTab.tBodies[0].rows[i].onmouseout=function(){
+            this.style.background=oldColor
+        }
+
+
+        if(i%2==0){
+            oTab.tBodies[0].rows[i].style.background='red'
+         }
+      }
+     </script>
+</body>
+</html>

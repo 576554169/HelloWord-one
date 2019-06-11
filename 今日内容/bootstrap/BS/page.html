@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    div{
+        height: 500px;
+        float: left;
+        background: red;
+        /* border: 1px solid black; */
+        margin: 1.5%;
+    }
+    @media screen and (max-width:900px) {
+        div{
+        height: 300px;
+        float: none;
+        background: blue;
+        margin: 5px auto;
+    }
+    }
+    </style>
+</head>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<body>
+    <script>
+                var height = $(window).height();
+				var width = $(window).width();
+				$("div").width(width*0.3);
+				$(window).resize(function() {
+						var width = $(window).width();
+						$("div").width(width*0.3);
+			})		   
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 300px;
+        height: 300px;
+        position: relative;
+        top: 50px;
+        left: 0px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="点击" id="btn">
+    <div class="box"></div>
+</body>
+<script>
+    var box = document.getElementsByClassName("box")[0];
+    var btn = document.getElementById("btn")
+    var timer =null;
+    var speed = null;
+    function move(Target){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            if(box.offsetLeft>Target){
+                speed = -7;
+            }else{
+                speed = 7;
+            }
+             if(Math.abs(box.offsetLeft-Target)<=7){
+                 clearInterval(timer);
+                 box.style.left = Target + "px"
+             }else{
+                box.style.left = box.offsetLeft + speed + "px"
+             }
+        },30)
+    }
+    btn.onclick = function(){
+        move(300);
+    }
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function Person(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        Object.assign(Person.prototype, {
+            showName:function () {
+                return `名字是：${this.name}`
+            },
+            showAge:function () {
+                return `名字是：${this.age}`
+            },
+            showAge:function () {
+                return `名字是：${this.age}`
+            }
+        })
+        
+        function Student(name,age){
+            Person.call(this,name,age)//继承属性
+        }
+        // 继承方法
+        for(var i in Person.prototype){
+            Student.prototype[i]=Person.prototype[i]
+        }
+        var s1=new Student('lvv',18)
+        console.log(s1.showName())
+    </script>
+</body>
+</html>

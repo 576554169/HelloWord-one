@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			#div1 input{
+				background: white;
+			}
+			#div1 input.active{
+				background: yellow;
+			}
+			#div1 div{
+				width: 200px;
+				height: 200px;
+				background: #CCCCCC;
+				display: none;
+			}
+		</style>
+        <script type="text/javascript">	
+        // 属性和方法
+        // 1.解决函数嵌套问题   函数===》方法
+        // 2.window.onload=function(){}===>构造函数
+        // 声明的变量  都是属性
+        // 内嵌的函数否是方法
+        window.onload=function(){
+            new TabSwitch('div1')   
+        }
+        // 属性写在构造函数里面，方法写在原型里面
+       function TabSwitch(id){  
+           var _this=this         
+            var oDiv=document.getElementById(id);
+            this.oBtn=oDiv.getElementsByTagName('input');
+            this.oBox=oDiv.getElementsByTagName('div');
+            for(var i=0;i< this.oBtn.length;i++){
+                this.oBtn[i].index=i
+                this.oBtn[i].onclick=function(){
+                    _this.fnclick(this)
+                }
+            }
+        }               
+        TabSwitch.prototype.fnclick=function(box){
+            for(var i=0;i< this.oBtn.length;i++){
+                this.oBtn[i].className='';
+                this.oBox[i].style.display='none'
+            }
+            box.className='active';
+            this.oBox[box.index].style.display='block'
+        }
+		</script>
+	</head>
+	<body>
+		 <div id="div1">
+			 <input class="active" type="button" value="aaa">
+			 <input type="button" value="bbb">
+			 <input type="button" value="ccc">
+			 
+			 <div style="display: block;" >111</div>
+			 <div>222</div>
+			 <div>333</div>
+		 </div>
+
+	</body>
+</html>

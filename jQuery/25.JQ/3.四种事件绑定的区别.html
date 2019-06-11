@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<body>
+		<!-- bind live delegate on  one
+		      unbind  die   undelegate off
+		-->     
+		<button type="button">点击</button>
+		<script src="../jquery.js" type="text/javascript" charset="utf-8"></script>
+	    <script type="text/javascript">
+// bind:为某些特定的元素添加特定的事件==》on普通用法  ==>(不太好)
+// live：动态获取元素===>（已经被弃用）
+// delegate：事件委托
+
+// on
+
+	//  one
+	$('button').one('click',function(){
+		alert(1)
+	})
+
+	    </script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./Ajax/ajax.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 用ajax获取到的数据都是字符串 -->
+    <button id="btn">获取</button>
+    <script>
+    var oBtn=document.getElementById('btn');
+    oBtn.onclick=function(){
+        ajax('1.txt',function(str){
+            // var arr=eval(str)
+            // 是数据转换成JS可以操作的数据格式
+
+            // var arr=JSON.parse(str)
+            alert(arr)
+            alert(typeof arr)
+        },function(){
+            alert('数据获取失败')
+        })
+    }
+    </script>
+</body>
+</html>

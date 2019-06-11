@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+    <style>
+        #ipt {
+            display: none;
+            background-color: pink
+        }
+    </style>
+    <!-- <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oIpt = document.getElementById('ipt');
+            //方法一
+            // oBtn.onclick=function(){
+            //     if(oIpt.style.display=='block'){
+            //         oIpt.style.display='none'
+            //     }else{
+            //         oIpt.style.display='block'
+            //     }
+            // }
+            //方法二
+            // var is = false
+            // oBtn.onclick=function(){
+            //     if(!is){
+            //         is=true
+            //         oIpt.style.display='block'
+            //     }else{
+            //         is=false
+            //         oIpt.style.display='none'
+            //     }
+            // }
+            //方法三
+
+            //}
+            // $(function(){
+            //     var isi = false
+            //     $('#btn').click(function(){
+            //         if(!isi){
+            //             isi=true;
+            //             $('#ipt').css({
+            //                 'display':'block'
+            //             })              
+            //         }else{
+            //             isi=false;
+            //             $('#ipt').css('display','none')
+            //         }
+            //     })        
+            // }
+            //方法四
+            //     var isi = false
+            //     $('#btn').click(function(){
+            //         if(!isi){
+            //             isi=true;
+            //             $('#ipt').show(1000)
+            //         }else{
+            //             isi=false;
+            //             $('#ipt').hide(1000)
+            //         }
+            //     })
+            // }  
+            //方法5
+            $('#btn').click(function () {
+                $('#ipt').toggle(1000)
+            })
+    </script> -->
+</head>
+
+<body>
+    <input id='btn' type="button" value="点击">
+    <br>
+    <input id="ipt" type="text">
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oIpt = document.getElementById('ipt');
+            //方法一
+            // oBtn.onclick=function(){
+            //     if(oIpt.style.display=='block'){
+            //         oIpt.style.display='none'
+            //     }else{
+            //         oIpt.style.display='block'
+            //     }
+            // }
+            //方法二
+            // var is = false
+            // oBtn.onclick=function(){
+            //     if(!is){
+            //         is=true
+            //         oIpt.style.display='block'
+            //     }else{
+            //         is=false
+            //         oIpt.style.display='none'
+            //     }
+            // }
+            //方法三
+
+            //}
+            // $(function(){
+            //     var isi = false
+            //     $('#btn').click(function(){
+            //         if(!isi){
+            //             isi=true;
+            //             $('#ipt').css({
+            //                 'display':'block'
+            //             })              
+            //         }else{
+            //             isi=false;
+            //             $('#ipt').css('display','none')
+            //         }
+            //     })        
+            // }
+            //方法四
+            //     var isi = false
+            //     $('#btn').click(function(){
+            //         if(!isi){
+            //             isi=true;
+            //             $('#ipt').show(1000)
+            //         }else{
+            //             isi=false;
+            //             $('#ipt').hide(1000)
+            //         }
+            //     })
+            // }  
+            //方法5
+            // $('#btn').click(function () {
+            //     $('#ipt').toggle(1000)
+            // })
+            //方法六    :hidden :visiblity
+            $('#btn').click(function(){
+                if($('#ipt').is(':hidden')){
+                    $('#ipt').show(1000)
+                }else{
+                    $('#ipt').hide(1000)
+                }
+            })
+                   
+        }
+    </script>
+</body>
+
+</html>

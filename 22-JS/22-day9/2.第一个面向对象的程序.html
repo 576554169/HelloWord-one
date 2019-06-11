@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//用对象的人
+// 写对象
+
+// 在写对象的时候 一般在Object这个原始对象中去写
+// 不在已有的对象上写例如Number()
+// 防止与原有对象的属性或者方法发生冲突
+        var obj=new Object()
+        obj.name='yhq';
+        obj.tel='18831606929';
+        obj.getNmae=function(){
+            alert(this.name)
+        }
+        obj.getTel=function(){
+            alert(this.tel)
+        }
+        obj.getNmae()
+        obj.getTel()
+    //    问题很大！！
+    //    造成大量的代码冗余
+    //    拓展性差
+</script>
+</body>
+</html>

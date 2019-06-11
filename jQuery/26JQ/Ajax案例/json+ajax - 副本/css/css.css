@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.box{
+    width: 100%;
+    height: 100%;
+}
+.left{
+    width: 300px;
+    height: 100%;
+    background: #564839;
+    float: left;
+}
+.left p{
+    width: 300px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-indent: 2em;
+    font-size: 20px;
+}
+
+.right{
+    width: calc(100% - 300px);
+    height: 100%;
+    background: #41362B;
+    float: right;
+}
+.r_top{
+    width: 100%;
+    height: 133px;
+    background: #4C4137;
+
+}
+.r_top img{
+
+}
+ul li{
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+}
+ul li p{
+    width: 33%;
+    height: 50px;
+    float: left;
+    text-indent: 1em;
+}
+
+
+
+

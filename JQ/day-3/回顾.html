@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+JQ:
+   隐式遍历，链式调用，读写合一，JS的大型函数（库）
+
+   函数：$   jQuery
+   对象:  函数执行后的结果
+   （当需要用到JQ的方法的时候，前边必须要是JQ的对象）
+
+   对象：each()   index()   size()/length    $(ele)[index]/$(ele).get(index)
+
+   选择器：
+         基本选择器，过滤选择器，层次选择器，表单选择器
+
+   is()==>只要满足is()中的条件，就返回true
+   html()==>innerHTML   
+   val()===>value
+   attr()===>属性（读写合一）   prop()===>专门操作布尔值的属性
+   hover()==>传两个函数。函数1==》鼠标移入  函数2==》鼠标移出
+
+   show()  hide()    toggle()
+   slideDown()   slideUp()   slideToggle()
+   addClass()   removeClass()   toggleClass()
+
+   toggle()===>可以传任意多个函数，分别表示第几次点击
+
+   js与JQ的入口函数（加载函数）
+   js:window.onload
+   JQ:$(document).ready()==>$(function(){})
+
+   this与$(this)
+   this==>谁调用他，指向谁
+   $(this)===》JQ对象，调用这个方法的JQ对象
+
+  this.style.background='red';
+
+  $(this).css({
+       "background":"red"
+   })
+</body>
+</html>

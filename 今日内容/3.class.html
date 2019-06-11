@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   // 静态方法
+   class Person{
+        constructor(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        static showName(){
+            return `名字是:${this.name}`
+        }
+        showName(){
+            return `名字是:${this.name}`
+        }
+        showAge(){
+            return `年龄是:${this.age}`
+        }
+    } 
+       Person.prototype=new a()
+       function a(){
+           
+       }
+    // 类（Person）的静态方法，实例（p1）不能调用,类可以直接调用
+    var p1=new Person('wpd',30)
+    console.log(Person.showName())
+    console.log(p1.showName())
+  
+    </script>
+</body>
+</html>

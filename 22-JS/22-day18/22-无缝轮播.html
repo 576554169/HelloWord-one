@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./move2.js"></script>
+    <title></title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            /* overflow: hidden; */
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        ul li {
+            color: black;
+            font-size: 80px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="all" id='all'>
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li style="background-color: red" width="500" height="200">1</li>
+                <li style="background-color: yellow" width="500" height="200">2</li>
+                <li style="background-color: blue" width="500" height="200">3</li>
+                <li style="background-color: green" width="500" height="200">4</li>
+                <li style="background-color: deeppink" width="500" height="200">5</li>
+                <li style="background-color: red" width="500" height="200">1</li>
+            </ul>
+            <ol>
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ol>
+            <div id="arr">
+                <span id="left"><</span>
+                <span id="right">></span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+      var all=document.getElementById('all')
+      var ul=all.children[0].children[0];
+      var ol=all.children[0].children[1];
+      var ulLiArr=ul.children
+      var olLiArr=ol.children
+    //   1：当鼠标放到方片上的时候   轮播
+    for(var i=0;i<olLiArr.length;i++){
+        olLiArr[i].index=i
+        olLiArr[i].onmouseover=function(){
+            for(var j=0;j<olLiArr.length;j++){
+                olLiArr[j].className=''
+            }
+            key=square=this.index
+            this.className='current';
+            startMove(ul,{left:-this.index*ul.children[0].offsetWidth})
+        }
+    }
+    // 添加定时器
+    var timer=null;
+    var key=0;
+    var square=0;
+    function autoPlay(){
+      key++;
+      square++;
+      if(key>ulLiArr.length-1){
+       ul.style.left=0;
+       key=1
+      }
+      startMove(ul,{left:-key*ul.children[0].offsetWidth})
+      
+      square=square>olLiArr.length-1?0:square
+      for(var j=0;j<olLiArr.length;j++){
+        olLiArr[j].className=''
+      }
+      olLiArr[square].className='current'
+    }
+    var timer=setInterval(autoPlay,1500)
+   
+    // 鼠标移入移出控制定时器开关
+    all.onmouseover=function(){
+        clearInterval(timer)
+    }
+    all.onmouseout=function(){
+       timer=setInterval(autoPlay,1500)
+    }
+    
+    // 左右点击
+    var btnArr=all.children[0].children[2].children
+    btnArr[0].onclick=function(){
+        key--;
+        square--;
+        if(key<0){
+          ul.style.left=-5*ul.children[0].offsetWidth+'px';
+          key=4;
+        }
+        startMove(ul,{left:-key*ul.children[0].offsetWidth})
+
+        square=square<0?4:square;
+        for(var j=0;j<olLiArr.length;j++){
+        olLiArr[j].className=''
+      }
+      olLiArr[square].className='current'
+    }
+
+    btnArr[1].onclick=function(){
+        autoPlay()
+    }
+    </script>
+</body>
+
+</html>

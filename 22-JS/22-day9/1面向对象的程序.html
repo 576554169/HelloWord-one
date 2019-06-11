@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+       对象：方法+属性
+     -->
+     <script>
+     var json={}
+    //  console.log(typeof json)
+    //  console.log(typeof "abc")
+
+    //  var str='123'
+    //  简写    ==》  语法糖
+    // var str=new String('123')
+    // console.log(typeof str)
+    // console.log(typeof String)
+    // console.log(typeof Object)
+
+    // console.log(Object.prototype)
+    // var fn=function(){}
+    // console.log(fn.prototype.__proto__===Object.prototype)
+
+    // var fn=new Function()
+
+    var fn=function(){}
+    console.log(fn instanceof Object)
+    // fn的__proto__   在沿着Object.prototype   在原型链上去找
+    // 当找到一个相同的节点的时候   返回true
+     </script>
+</body>
+</html>

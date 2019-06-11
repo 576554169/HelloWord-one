@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./cookie.js"></script>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form action="作业登录.html" id="onsub">
+        <table>
+            <tr>用户：
+                <td><input type="text" id="user"></td>
+                <td id="con"></td>
+            </tr>
+            <tr><input type="submit"></tr>
+        </table>
+
+    </form>
+</body>
+<script>
+    var user = document.getElementById('user')
+    var con = document.getElementById('con')
+
+    user.onfocus = function () {
+        con.innerHTML = '请输入用户名'
+        con.style.color = 'red'
+    }
+    user.onblur = function () {
+        if (!(/\w/).test(user.value)) {
+            con.innerHTML = '格式不正确';
+            con.style.color = 'red'
+        } else {
+            con.innerHTML = '格式正确';
+            con.style.color = 'green'
+        }
+    }
+
+    function xxx() {
+        if (!(/\w/).test(user.value)) {
+            con.innerHTML = '格式不正确';
+            con.style.color = 'red'
+            return false
+        } else {
+            con.innerHTML = '格式正确';
+            con.style.color = 'green'
+            setCookie('user', user.value, 14)
+
+        }
+    }
+
+    onsub.onsubmit = function () {
+        return xxx()
+    }
+</script>
+
+</html>

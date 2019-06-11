@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form" action="">
+        年龄：<input type="text" name="age">
+        <input type="submit" value="提交">
+    </form>
+    <!-- 
+        首先在客户端注册一个callback（名字任意），
+        然后动态创建script标签通过src引入服务器端的php文件（类似引入js文件的方式）
+        ，同时将客户端注册的callback的名字传给服务器，
+        php文件载入成功后，服务器先生成我们需要的 json 数据，
+        然后将其作为参数传入我们在url参数中指定的函数，
+        所以jsonp是需要服务器端的页面进行相应的配合的
+     -->
+    <script>
+    var oForm=document.getElementById('form');
+
+    function f1(data){
+        alert(data.age)
+    }
+
+    oForm.onsubmit=function(){
+        var sc=document.createElement('script')
+        sc.src="http://localhost/jsonp.php";
+        sc.src+="?age="+oForm.age.value;
+        sc.src+="&callback=f1";
+
+        document.body.appendChild(sc)
+
+        setTimeout(function(){
+            document.body.removeChild(sc)
+        },1000)
+    }
+    </script>
+</body>
+</html>

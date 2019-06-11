@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>获取</button>
+    <script src="./json+ajax/js/jquery.js"></script>
+    <script>
+     $('button').click(function(){
+         $.ajax({
+             type: "get", //传输方式  get/迫post
+             url: "./1.txt",//请求路径
+             data: {},  //所要发送的数据
+             dataType: "json",   //数据格式
+             async:false,   //同步还是异步
+            //  success: function (str) {  //请求成功后的回调
+            //      alert(str)
+            //  },
+         }).done(function(str){
+            alert(str)
+         });
+     })
+    //  .done==>请求成功后的回调
+    // .fail请求失败后的回调
+    </script>
+</body>
+</html>

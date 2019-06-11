@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #tab li{
+            float: left;
+            list-style: none;
+            width: 118px;
+            height: 40px;
+            line-height: 40px;
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid black;
+        }
+        #container{
+            position: relative;
+        }
+        #container div{
+            width: 300px;
+            height: 100px;
+            padding: 30px;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            display: none;
+        }
+        #tab,#content1{
+            background-color: #ffcc00;
+        }
+        #content2{
+            background-color: violet;
+        }
+        #content3{
+            background-color: aqua;
+        }
+        .active{
+            background: violet;
+        }
+    </style>
+</head>
+<body>
+    <ul id="tab">
+        <li class="tab1 active">1111</li>
+        <li class="tab2">2222</li>
+        <li class="tab3">3333</li>
+    </ul>
+    
+    <div id="container">
+        <div id="content1" style="display: block;">aaaa</div>
+        <div id="content2">bbbb</div>
+        <div id="content3">cccc</div>
+    </div>
+    
+    <script src="./jquery.js"></script>
+    <script>
+     $('#tab li').click(function(){
+        // $('#tab li').removeClass('active');
+        // $('#container div').hide()
+       
+        // $(this).addClass('active');
+        // $('#container div').eq($(this).index()).show()
+
+
+        // $('#tab li').removeClass('active').siblings().eq($(this).index()).addClass('active');
+        // $('#container div').hide().siblings().eq($(this).index()).show()
+
+$(this).addClass('active').siblings('li').removeClass('active')
+$('#container div').eq($(this).index()).show().siblings('#container div').hide()
+     })
+    </script>
+</body>
+</html>

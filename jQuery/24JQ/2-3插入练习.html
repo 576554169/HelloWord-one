@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>无标题文档</title>
+	<style>
+		#ul1,
+		#ul2 {
+			width: 200px;
+			height: 200px;
+			border: 1px #000 solid;
+			float: left;
+		}
+
+		li {
+			cursor: pointer;
+		}
+
+		.active {
+			background: red;
+		}
+
+		input {
+			float: left;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1111</li>
+		<li>2222</li>
+		<li>3333</li>
+		<li>4444</li>
+		<li>5555</li>
+	</ul>
+	<input type="button" value="→">
+	<input type="button" value="←">
+	<ul id="ul2">
+		<li>aaaa</li>
+		<li>bbbb</li>
+		<li>cccc</li>
+		<li>dddd</li>
+		<li>eeee</li>
+    </ul>
+    <script src="../jquery.js"></script>
+    <script>
+    $('#ul1 li').click(function(){
+        $(this).toggleClass('active')
+    })
+
+    $('#ul2 li').click(function(){
+        $(this).toggleClass('active')
+    })
+
+$('input').first().click(function(){ 
+    $('#ul1').find('.active').appendTo($('#ul2')).removeClass('active')
+ })
+
+ $('input').last().click(function(){ 
+    $('#ul2').find('.active').appendTo($('#ul1')).removeClass('active')
+ })
+
+ // hasClass
+    // $('input').first().click(function(){
+    //   $('#ul1').find('li').each(function(){
+    //       if($(this).hasClass('active')){
+    //           $(this).removeClass('active');
+    //           $('#ul2').append($(this))
+    //       }
+    //   })
+    // })
+    // $('input').last().click(function(){
+    //   $('#ul2').find('li').each(function(){
+    //       if($(this).hasClass('active')){
+    //           $(this).removeClass('active');
+    //           $('#ul1').append($(this))
+    //       }
+    //   })
+    // })
+    </script>
+</body>
+</html>

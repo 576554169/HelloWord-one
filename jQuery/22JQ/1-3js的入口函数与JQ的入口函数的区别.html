@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./jquery.js"></script>
+    <title>Document</title>
+    <script>
+    window.onload=function(){
+        alert(1)
+    }
+    $(document).ready(function(){
+        alert(2)
+    })
+    $(function(){
+        alert(3)
+    })
+    </script>
+</head>
+<body>
+    <!-- 
+        window.onload 与   $(document).ready
+        1。window.onload等页面中的图片  视频加载完毕后加载
+                $(document).ready==》上来就加载
+                $(document).ready加载 是在 window.onload之前
+
+        2.window.onload一个页面中只有一个，多了覆盖
+         $(document).ready可以有多个  并且都会执行
+
+        3.window.onload没有简写
+          $(document).ready有简写 $(function(){}) ===》最常用的
+
+        4.window.onload可以出现在所有的JS脚本中
+         $(document).ready  只能出现在引用了JQ的页面内
+
+        5.兼容性  $(document).ready  可以自动处理Ajax的兼容
+     -->
+</body>
+</html>

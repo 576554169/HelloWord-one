@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<script type="text/javascript">			
+			window.onload = function() {
+				var oBtn = document.getElementById('btn1');
+				function myAddEvent(obj,ev,fn) {
+					if (obj.attachEvent) {
+						obj.attachEvent('on'+ev,fn);
+					}else{
+						obj.addEventListener(ev,fn,false)
+					}
+				}
+				
+				myAddEvent(oBtn,'click',function () {
+					alert('a')
+				});
+				myAddEvent(oBtn,'click',function () {
+					alert('b')
+				})
+				
+				
+				// 解除事件绑定
+				// IE  detachEvent
+				// chrom ff    removeEventListener
+				
+			}
+		</script>
+	</head>
+	<body>
+		
+		<input type="button" id="btn1" value="点击">
+
+	</body>
+</html>

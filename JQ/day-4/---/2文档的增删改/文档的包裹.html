@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>11111111111</li>
+        <li>22222222222</li>
+        <li>33333333333</li>
+        <li>44444444444</li>
+        <li>55555555555</li>
+    </ul>
+    <script src="../jquery.js"></script>
+    <script>
+    $('li').wrap('<b></b>')  //用什么什么来包裹
+    $('li').unwrap()      //移出用来包裹的元素   父元素
+    $('li').wrapAll('<div></div>')   //用某个元素来包裹所有的 元素
+
+    $('li').wrapInner('<b></b>')  //将匹配元素的子元素用一个元素包裹起来
+    </script>
+</body>
+</html>

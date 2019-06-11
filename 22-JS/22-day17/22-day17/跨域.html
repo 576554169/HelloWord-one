@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+     netscape
+     同源策略:端口  协议  域名  不相同的网站之间不能进行交流
+     http://www.foo/b.com      http://www.foo/a.com   ==>可以
+     http://www.foo/b.com      http://www.too/a.com   ==>不可以   域名不同
+     http://www.foo:8081/a.com   http://www.foo/b.com  ==》不可以  端口不一样
+     http://www.foo/a.com      https://www.foo/b.com   ===>不可以  协议不一样
+
+     同源策略：===》一种浏览器之间的约定，现今的浏览器其实是同源策略的一种实现
+
+     注意：
+         1、端口以及协议产生的跨域问题  前台是无法解决的
+         2、一般情况下  通过url地址栏来判断是否满足同源策略
+
+     script src
+     img   src
+     link  href
+         这三者不受同源策略的限制
+----------------------------------------------------------------
+    jsonp:
+    json与XML
+
+    json：
+    轻量级数据交互格式
+    便于浏览器的读写
+    减轻了浏览器的负担
+
+    不是所有的后台语言都支持json的格式
+    -----------------------------------------------------------
+
+    jsonp:只能解决get方式的请求
+
+
+    crows
+     -->
+    <form action="" id="form">
+        <input type="text" name="age">
+        <input type="submit" value="提交">
+    </form>
+ 
+     <script>
+       var oForm=document.getElementById('form');
+
+       function f1(data){
+         alert(data.age)
+       }
+// ?username=lvv&password=123456
+      oForm.onsubmit=function(){
+        var sc=document.createElement('script')
+        var url='http://localhost/jsonp.php';
+        url+='?age=1'
+        url+='&callback=f1';
+        sc.src=url
+
+       document.body.appendChild(sc)
+       setTimeout(function(){
+           document.body.removeChild(sc)
+       },2000)
+       return false
+      }
+     </script>
+</body>
+</html>

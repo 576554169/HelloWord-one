@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li class="li">111</li>
+        <li class="li" title="cc">222</li>
+        <li>333</li>
+        
+        <li class="li" title="aa">444
+                <span title="aa">我是span元素</span>
+        </li>
+        
+        <li>555</li>
+    </ul>
+
+    <script src="./jquery.js"></script>
+    <script>
+    // 找到UL中的第一个li
+    // $('ul li').first().css('background','red')
+
+    // 最后一个Li
+    // $('ul li').last().css('background','yellow')
+
+    // 找到第四个li
+    // $('ul li:eq(3)').css('background','blue')
+    // $('ul li').eq(3).css('background','blue')
+    // 
+    // $('ul li.li').eq(2).css('background','blue')
+
+    // 给所有的li加上透明度，除了title="cc"的li
+
+    // $('ul li').css('background','red').not('[title=cc]').css('opacity','0.5')
+    // JQ  一般都是先确定好元素，然后操作
+
+    // filter
+    //    $('ul li').filter('[title=cc]').css('background','blue')
+   
+    // has()==>括号里面填的应该是一个元素,
+    // has()方法将会从给定的jQuery对象中重新创建一组匹配的对象。
+    // 提供的选择器会一一测试原先那些对象的后代，含有匹配后代的对象将得以保留。
+     $('ul li').has('span').css('background','blue')
+
+    /* 
+    first()
+    last()
+    eq()
+    not()
+    filter()
+    has()
+    */
+     
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #ipt{
+        display: none;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+    <input id="btn" type="button" value="点击">
+    <br>
+    <input id="ipt" type="text">
+     
+    <script src="./jquery.js"></script>
+    <script>
+    var oBtn=document.getElementById('btn');
+    var oIpt=document.getElementById('ipt');
+    //方法一
+    // oBtn.onclick=function(){
+    //     if(oIpt.style.display=='block'){
+    //         oIpt.style.display='none'
+    //     }else{
+    //         oIpt.style.display='block'
+    //     }
+    // }
+
+    // 方法2
+    // var isShow=false
+    // oBtn.onclick=function(){
+    //     if(!isShow){
+    //         isShow=true
+    //         oIpt.style.display='block'
+    //     }else{
+    //         isShow=false
+    //         oIpt.style.display='none'
+    //     }
+    // }
+
+    // 方法3
+    //  var isShow=false
+    //  $('#btn').click(function(){
+    //    if(!isShow){
+    //      isShow=true;
+    //      $('#ipt').css({
+    //          'display':'block',
+    //      })
+    //    }else{
+    //     isShow=false
+    //     $('#ipt').css('display','none')
+    //    }
+    //  })
+
+
+    //  方法4
+    // var isShow=false
+    //  $('#btn').click(function(){
+    //    if(!isShow){
+    //      isShow=true;
+    //      $('#ipt').show(1000)
+    //    }else{
+    //     isShow=false
+    //     $('#ipt').hide(1000)
+    //    }
+    //  })
+
+    // 方法5
+    // $('#btn').click(function(){
+    //     $('#ipt').toggle(1000)
+    // })
+
+    // 方法6   :hidden   :visiblity
+
+    // $('#btn').click(function(){
+    //     if($('#ipt').is(':hidden')){
+    //         $('#ipt').show(1000)
+    //     }else{
+    //         $('#ipt').hide(1000)
+    //     }
+    // })
+
+
+    /*
+    css()  css({})   如果只传一个属性的话 ==》读取     传属性和属性值==》设置
+    show()  ==>显示   如果传  毫秒数   ==》动画
+    hide()  ==>隐藏
+
+    is() ==>看所选JQ对象   是否满足括号里面的条件   
+
+
+    toggle()==>切换
+    */ 
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        overflow: hidden;
+    }
+    .div1{
+        width: 500px;
+        height: 500px;
+        margin: 100px auto;
+    }
+    .div2{
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+    }
+    .div3{
+        width: 100px;
+        height: 100px;
+        margin: 100px auto;
+    }
+    </style>
+</head>
+    
+<body>
+    <div class="div1" style="background:red;" onclick="alert(this.style.background)">
+        <div class="div2" style="background:yellow;" onclick="alert(this.style.background)">
+            <div class="div3" style="background:black;" onclick="alert(this.style.background)"></div>
+        </div>
+    </div>
+</body>
+<!-- 这种现象  ==》  事件冒泡
+                            ：当子元素发生某一个事件，之后这个事件会往父级上一级一级触发               
+-->
+</html>

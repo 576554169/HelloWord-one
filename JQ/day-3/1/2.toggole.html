@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 150px;
+        background: yellowgreen;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -75px;
+        margin-left: -50px;
+        transition: all 2s;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <input type="button" id="ipt" value="点击">
+    <script src="../jquery.js"></script>
+    <script>
+    $('#ipt').toggle(function(){
+       $('div:eq(0)').css({'left':'30%','opacity':'0'})
+    },function(){
+       $('div:eq(1)').css({'left':'70%','opacity':'0'})
+    },function(){
+       $('div:eq(2)').css({'top':'30%','opacity':'0'})
+    },function(){
+       $('div:eq(3)').css({'top':'70%','opacity':'0'})
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+<body>
+    <ul id="ul1">
+        <li>1111 <a href="javascript:;">删除</a></li>
+        <li>2222 <a href="javascript:;">删除</a></li>
+        <li>3333 <a href="javascript:;">删除</a></li>
+        <li>4444 <a href="javascript:;">删除</a></li>
+    </ul>
+    <!-- 父级.removeChild()-->
+    <script type="text/javascript">
+        var aA = document.getElementsByTagName('a');
+        var oUl = document.getElementById('ul1')
+        for (var i = 0; i < aA.length; i++) {
+            aA[i].onclick = function () {
+                oUl.removeChild(this.parentNode);
+            }
+        }
+    </script>
+</body>
+
+</html>

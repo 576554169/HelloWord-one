@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+ //map()方法可以循环遍历数组中的每一个元素，但是存在返回值
+// 且返回的是一个新的数组,原数组不变
+// map()在使用的时候  尽量都要用到返回值
+var arr=['apple','banana',1,'lvv'];
+
+var newArr=arr.map(function(i,index,arr){
+    // console.log(i,index,arr)
+    i=i+'lvv'
+    return i
+})
+console.log(newArr,arr)
+
+var arr2=[
+    {name:'lalal',read:1000,hot:true},
+    {name:'lalal',read:1000,hot:true},
+    {name:'lalal',read:1000,hot:true},
+    {name:'lalal',read:1000,hot:true},
+    {name:'lalal',read:1000,hot:true}
+]
+var newAerr2=arr2.map(function(i,index){
+       var json={}
+       json.n=`---${arr2[index].name}---`
+       json.re=10000
+       json.hot=false
+       return json
+})
+console.log(newAerr2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 元素的插入 -->
+    <ul>
+        <li>11111111</li>
+        <li>22222222</li>
+        <li class="li3">33333333</li>
+        <li>44444444</li>
+        <li class="li5">55555555</li>
+    </ul>
+   <ul class="ul2"></ul>
+   <ul class="ul2"></ul>
+   <ul class="ul2"></ul>
+   <ul class="ul2"></ul>
+   <ul class="ul2"></ul>
+    <script src="../jquery.js"></script>
+    <script>
+    // 无论是JS 还是JQ   对文档上已有元素的操作都是剪切！！！
+    $('.li3').appendTo($('.ul2'))
+    </script>
+</body>
+</html>

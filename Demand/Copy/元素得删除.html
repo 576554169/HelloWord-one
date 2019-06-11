@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>千山鸟飞绝</h1>
+        <h1>万径人踪灭</h1>
+        <h1>举头望明月</h1>
+        <h1>低头思故乡</h1>
+        <h1>壮士开山</h1>
+    </div>
+    <script src="./jquery.js"></script>
+    <script>
+        $('div h1').click(function(){
+            // $(this).remove().appendTo('div')
+            $(this).detach().appendTo('div')
+        })
+    
+    </script>
+</body>
+</html>

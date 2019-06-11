@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+      <!-- JQ为什么可以链式调用
+             ==>在对象的方法之后  return this，再把对象折返回来
+       -->
+
+      <script>
+        //   定义一个类
+    function Demo(){}
+    //   扩展原型方法
+    Demo.prototype={
+        setName:function(name){
+              this.name=name
+              console.log(this,1)
+              return this
+        },
+        setAge:function(age){
+              this.age=age
+              return this
+        }
+    }
+    // 工厂函数
+      function Person() {  
+        return new Demo()
+      }
+      console.log(Person().setName('lvv').setAge('18'))
+      </script>
+</body>
+</html>

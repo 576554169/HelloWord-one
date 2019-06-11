@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <title>Document</title>
+    <style>
+    li{
+        width: 50px;
+        height: 50px;
+        background: red;
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+    }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <audio class="music" src="./music/sound00.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound01.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound02.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound03.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound04.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound05.mp3"></audio>
+        </li>
+        <li>
+            <audio class="music" src="./music/sound06.mp3"></audio>
+        </li>
+    </ul>
+
+    <script>
+        //  play()    paused()  ===>JS
+        $('li').click(function(){
+            var index=$(this).index()
+            var $music=$('.music')[index]
+            if($music.paused){
+                $music.play()
+            }
+        })
+    </script>
+</body>
+</html>

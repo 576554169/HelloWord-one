@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        padding: 10px;
+        margin: 10px;
+        position: absolute;
+        border: 10px solid black;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script src="./jquery.js"></script>
+    <script>
+           // 内容大小
+            console.log($('div').width())
+            console.log($('div').height())
+          
+           // 内部大小   内容+padding 
+            console.log($('div').innerWidth())
+            console.log($('div').innerHeight())
+            
+            // 外部大小
+           // 内容+padding+border    =>不传参，或者传false的时候
+            // 内容+padding+border+margin    ==>当传入一个true的时候
+           console.log($('div').outerWidth(true))
+           console.log($('div').outerHeight(true))
+    </script>
+</body>
+</html>

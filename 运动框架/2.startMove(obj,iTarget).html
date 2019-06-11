@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: relative;
+    }
+    </style>
+</head>
+<body>
+    <input id="btn" type="button" value="运动">
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <script>
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementsByTagName('div');
+   
+   for(var i=0;i<oBox.length;i++){
+    oBox[i].index=i
+    oBox[i].onclick=function(){
+        startMove(this,300)
+    }
+   }
+
+
+    function startMove(obj,iTarget){
+       clearInterval(obj.timer)
+       obj.timer=setInterval(function(){
+        //设置速度
+        var speed=(iTarget-obj.offsetLeft)/10
+        speed=speed>0?Math.ceil(speed):Math.floor(speed);
+        if(iTarget==obj.offsetLeft){
+           clearInterval(obj.timer)
+        }else{
+            obj.style.left=obj.offsetLeft+speed+'px';
+            document.title=obj.offsetLeft
+        }
+        // 设置运动
+       },30)
+    }
+    </script>
+</body>
+</html>

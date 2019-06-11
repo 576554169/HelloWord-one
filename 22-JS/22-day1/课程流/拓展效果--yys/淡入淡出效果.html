@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+		}
+
+		.yys {
+			width: 500px;
+			height: 500px;
+			position: relative;
+			margin: 100px auto;
+			border: 1px solid red;
+		}
+
+		.yys div {
+			width: 500px;
+			height: 500px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			border: 1px solid blue;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			/*让当前的图片尽量占满当前的div 标签*/
+			transition: all 1s 0s ease;
+		}
+
+		.yys div:nth-child(1) {
+			background-image: url(img/domo1.png);
+			left: 100px;
+			z-index: 2;
+		}
+
+		.yys div:nth-child(2) {
+			background-image: url(img/domo2.png);
+			left: -100px;
+		}
+
+		.yys div:nth-child(3) {
+			background-image: url(img/domo3.png);
+			opacity: 0;
+		}
+
+		.yys div:nth-child(4) {
+			background-image: url(img/domo4.png);
+			opacity: 0;
+		}
+
+		.btn {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			top: 50%;
+			left: 80%;
+			z-index: 10;
+			font-size: 40px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="yys">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div class="btn"></div>
+	<script type="text/javascript">
+		var dArr = document.querySelectorAll(".yys div");
+		var btn =document.querySelector(".btn");
+		var flag = true;
+		var time = true;
+		btn.onclick = function () { 
+			if(time){
+				time = false;
+				setTimeout(function(){time = true;},2000)
+				if(flag){
+				flag = false;
+				dArr[0].style.left = 0;
+				dArr[0].style.opacity = 0;
+				dArr[1].style.left = 0;
+				dArr[1].style.opacity = 0;
+				setTimeout(function(){
+					dArr[2].style.left = '100px';
+					dArr[2].style.opacity = 1;
+					dArr[3].style.left = '-100px';
+					dArr[3].style.opacity = 1;
+				},1000)
+			}else{
+				flag = true;
+				dArr[2].style.left = 0;
+				dArr[2].style.opacity = 0;
+				dArr[3].style.left = 0;
+				dArr[3].style.opacity = 0;
+				setTimeout(function(){
+					dArr[0].style.left = '100px';
+					dArr[0].style.opacity = 1;
+					dArr[1].style.left = '-100px';
+					dArr[1].style.opacity = 1;
+				},1000)
+			}
+		}
+	}
+	</script>
+</body>
+
+</html>

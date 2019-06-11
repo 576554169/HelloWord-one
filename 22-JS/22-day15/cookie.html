@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        缓存：cookie (客户端) session(服务端)   
+        H5新增webstorage:localstorage    sessionStorage
+        登录、注册===》储存用户的信息
+        记住密码===》两周内自动登录
+        购物车流程
+     -->
+     <!-- 
+         缓存：cookie 
+              1.不安全  cookie 本身是电脑上的一个文件，存在于硬盘
+              里面，有可能被用户删掉
+              2.cookie有可能被用户禁止
+      -->
+      <script>
+      document.cookie='userName=lvv';
+      document.cookie='passWord=123456';
+      document.cookie='passWord=789456';
+      alert(document.cookie)
+      </script>
+</body>
+</html>

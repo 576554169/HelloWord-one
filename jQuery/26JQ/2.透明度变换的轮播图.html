@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.banner,.banner-one {
+				width: 800px;
+				height: 300px;
+			}
+			.banner{
+				position: relative;
+			}
+			.banner-one{
+				display: none;
+				position: absolute;
+			}
+			.banner-one:first-child{
+				display: block;
+			}
+			.blue {
+				background: blue;
+			}			
+			.green {
+				background: green;
+			}			
+			.red {
+				background: red;
+			}			
+			.yellow {
+				background: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="banner">
+			<div class="banner-one blue"></div>
+			<div class="banner-one green"></div>
+			<div class="banner-one red"></div>
+			<div class="banner-one yellow"></div>
+		</div>
+				
+		<script src="../jquery.js"></script>
+		<script type="text/javascript">
+			var num = 0;
+			function timer(){
+				if(num==$(".banner-one").length-1){
+					num=0
+				}else{
+					num++
+				}
+				$('.banner-one').fadeOut()
+				$('.banner-one').eq(num).fadeIn()
+			}
+			var A = setInterval(timer,1000)
+		</script>
+	</body>
+
+</html>

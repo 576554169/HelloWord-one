@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style>
+		.banner,
+		.banner-one {
+			width: 800px;
+			height: 300px;
+		}
+
+		.blue {
+			background: blue;
+		}
+
+		.red {
+			background: red;
+		}
+
+		.green {
+			background: green;
+		}
+
+		.yellow {
+			background: yellow;
+		}
+
+		.banner {
+			position: relative;
+			overflow: hidden;
+		}
+
+		.banner-all {
+			width: 3200px;
+			position: absolute;
+		}
+
+		.banner-one {
+			float: left;
+		}
+
+		.banner-one:first-child {
+			display: block;
+		}
+	</style>
+	<!-- 	
+	    //  将第一张图放到最后
+		//$(".banner-one").first().appendTo(".banner-all");
+		//无缝轮播
+		//1  .banner-all  向左走
+		//2    当动画结束之后将第一张放到最后位置
+		//3  将left变成0(不能有动画  css)
+		//4  控制动画   当动画执行时不能动 -->
+
+
+	<script src="../jquery.js"></script>
+	<script>
+		$(function () {
+			var animateRunning = false
+			$(".btn").click(function () {
+				if (!animateRunning) {
+					animateRunning = true;
+					$(".banner-all").animate({ "left": -800 }, 300, function () {
+						$(".banner-one").first().appendTo(".banner-all");
+						$(".banner-all").css({ "left": 0 });
+						animateRunning = false
+					})
+				}
+			})
+			$(".btn1").click(function () {
+
+				if (!animateRunning) {
+					animateRunning = true;
+					$(".banner-one").last().prependTo(".banner-all");
+					$(".banner-all").css({ "left": -800 })
+					$(".banner-all").animate({ "left": 0 }, 300, function () {
+						animateRunning = false
+					});
+				}
+
+			})
+
+		})
+	</script>
+</head>
+
+<body>
+	<div class="banner">
+		<div class="banner-all">
+			<div class="banner-one blue"></div>
+			<div class="banner-one green"></div>
+			<div class="banner-one red"></div>
+			<div class="banner-one yellow"></div>
+		</div>
+	</div>
+	<button class="btn">切换</button>
+	<button class="btn1">切换1</button>
+</body>
+
+</html>

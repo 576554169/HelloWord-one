@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        element.cloneNode(false)  克隆当前节点，不克隆任何的子节点
+        element.cloneNode(true)   完全的复制一个节点，就是复制一切，包括他的子节点
+     -->
+     <ul>
+         <li>111</li>
+         <li>222</li>
+         <li>333</li>
+     </ul>
+     <div></div>
+     <script>
+     var oUl=document.getElementsByTagName('ul')[0];
+     var oDiv=document.getElementsByTagName('div')[0]
+     var oul1=oUl.cloneNode(false)
+     var oul2=oUl.cloneNode(true)
+
+     oDiv.appendChild(oul1)
+     oDiv.appendChild(oul2)
+     </script>
+</body>
+</html>

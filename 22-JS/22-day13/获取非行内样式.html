@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        opacity: 1;
+        font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div data-toogle='aaa' style="width:100px;" id="box"></div>
+    <script>
+    var oBox=document.getElementById('box')
+    console.log(oBox.style.width)
+    // 在js中 对style的操作，都是对行内样式的操作
+    
+    // 谷歌、火狐、IE8----
+    // console.log(getComputedStyle(oBox,false).backgroundColor)
+     
+    // JS第二定律
+    // 兼容IE
+    // console.log(oBox.currentStyle.height)
+
+    
+    // 获取非行内样式函数封装
+    function getStyle(obj,name){
+        if(obj.currentStyle){
+           return obj.currentStyle[name]
+        }else{
+           return getComputedStyle(obj,false)[name]
+        }
+    }
+     
+
+
+
+
+
+    // 对节点的属性操作
+    // getAttribute==》获取属性
+    // setAttribute==》设置属性
+    // console.log(oBox.getAttribute('data-toogle'))
+    // oBox.setAttribute('class','div')
+    </script>
+</body>
+</html>

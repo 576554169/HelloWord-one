@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+      //1.没有new
+      //2.造成了大量的不必要的请求   
+      function CreatePerson(name,tel){
+          //原料 
+          var obj=new Object()
+          //加工
+          obj.name=name;
+          obj.tel=tel;
+
+          obj.getName=function(){
+              alert("我叫"+this.name)
+          }
+          obj.getTel=function(){
+              alert("我的号码是"+this.tel)
+          }
+         // 出厂
+         return obj
+      }
+      var obj1=CreatePerson('yhq','18831606929')
+      var obj2=CreatePerson('lvv','11011011011')
+    //   obj1.getTel()
+    //   obj2.getTel()
+      console.log(obj1.getTel===obj2.getTel)
+
+</script>
+</body>
+</html>

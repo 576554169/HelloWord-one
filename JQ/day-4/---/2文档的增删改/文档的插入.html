@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>aaaaaa</li>
+        <li>bbbbbb</li>
+        <li class="cc">cccccc</li>
+    </ul>
+    <script src="../jquery.js"></script>
+
+    <script>
+        // 内部
+    $('ul').append('<b>我是append的b标签</b>')
+    $('ul').prepend('<b>我是prepend的i标签</b>')
+
+    // $('li').prepend($('.cc'))   剪切
+
+    $('<div>我是appendTo加入的div标签</div>').appendTo('ul')
+    $('<div>我是prependTo加入的div标签</div>').prependTo('ul')
+    
+        //外部
+    $('ul').after('<li>我是after加入的li标签</li>')
+    $('ul').before('<li>我是before加入的li标签</li>')
+
+    $('<li>我是insertAfter加入的li标签</li>').insertAfter('ul')
+    $('<li>我是insertBefore加入的li标签</li>').insertBefore('ul')
+    </script>
+</body>
+</html>

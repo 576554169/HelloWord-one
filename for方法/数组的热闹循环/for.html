@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!-- for forin  forEach map() sowm()  every() reduce() -->
+  <script>
+  var arr=['apple','banana',1,'lvv'];
+//   for(var i=0;i<arr.length;i++){
+//       console.log(i)
+//       console.log(arr[i])
+//   }
+
+   /* for in  就是为了循环对象的*/
+//    var json={
+//        a:1,
+//        b:2
+//    }
+//    for(var i in json){
+//     console.log(i,json[i])
+//    }
+
+//    arr.forEach(function(i,index){
+//       console.log(i,index,this)
+//    }.bind(123))
+
+// bind()  call()  apply()
+    
+   function show(){
+       console.log(1,this)
+   }
+   show()
+   show.call(789)
+   show.apply(123)
+
+
+   show.bind(456)()
+
+
+
+
+  </script>
+</body>
+</html>

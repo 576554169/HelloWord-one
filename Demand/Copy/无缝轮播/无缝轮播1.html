@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./move2.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            border: 0;
+        }
+
+        .all {
+            width: 500px;
+            height: 200px;
+            padding: 7px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .screen {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen li {
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+
+        .screen ul {
+            position: absolute;
+            left: 0;
+            top: 0px;
+            width: 3000px;
+        }
+
+        ul li {
+            color: black;
+            font-size: 80px;
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .all ol {
+            position: absolute;
+            right: 10px;
+            bottom: 10px;
+            line-height: 20px;
+            text-align: center;
+        }
+
+        .all ol li {
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #fff;
+            border: 1px solid #ccc;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .all ol li.current {
+            background: yellow;
+        }
+
+        #arr span {
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            margin-top: -20px;
+            background: #000;
+            cursor: pointer;
+            line-height: 40px;
+            text-align: center;
+            font-weight: bold;
+            font-family: '黑体';
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.3;
+            border: 1px solid #fff;
+        }
+
+        #arr #right {
+            right: 5px;
+            left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all" id='all'>
+        <div class="screen" id="screen">
+            <ul id="ul">
+                <li style="background-color: red" width="500" height="200">1</li>
+                <li style="background-color: yellow" width="500" height="200">2</li>
+                <li style="background-color: blue" width="500" height="200">3</li>
+                <li style="background-color: green" width="500" height="200">4</li>
+                <li style="background-color: deeppink" width="500" height="200">5</li>
+                <li style="background-color: red" width="500" height="200">1</li>
+            </ul>
+            <ol>
+                <li class="current">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ol>
+            <div id="arr">
+                <span id="left">
+                    <</span> <span id="right">>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script>
+        var all = document.getElementById('all')
+        var ul = all.children[0].children[0];
+        //获取all 下边的索引值为0的盒子里的索引值为0的盒子
+        var ol = all.children[0].children[1];
+        //获取all 下边的索引值为0的盒子里的索引值为1的盒子
+
+        var ulLiArr = ul.children
+        //获取 ul下边的子集 
+        var olLiArr = ol.children
+        //获取 ol下边的子集 
+
+        //one：鼠标移入方块时  轮播
+        for (var i = 0; i < olLiArr.length; i++) {
+            olLiArr[i].index = i
+            olLiArr[i].onmouseover = function () {
+                //鼠标划入
+                for (var j = 0; j < olLiArr.length; j++) {
+                    //清空
+                    olLiArr[j].className = ''
+                }
+                key = square = this.index
+                //恢复到原来颜色
+                this.className = 'current';
+                //划入小图大图也一起动
+                startMove(ul, { left: -this.index * ul.children[0].offsetWidth })
+            }
+        }
+        //添加定时器
+        var timer = null;
+        var key = 0;
+        var square = 0;
+        function autoPlay() {
+            key++;
+            square++;
+            //如果大图的索引值大于小图的长度的最大值索引值-1 
+            //长度减一是最大索引值
+            if (key > ulLiArr.length - 1) {
+                //先回到第一张
+                ul.style.left = 0;
+                //然后等与1直接来第二张
+                key = 1;
+            }
+            //当key为1是执行startMove 动画效果
+            startMove(ul,{left:-key*ul.children[0].offsetWidth})
+            //square 大于5的时候等于0         其余在哪都可以
+            //如果之满足  执行冒号前边的  不满足执行冒号后边的
+            //？前边成立执行；前边的  
+            square=square>olLiArr.length-1?0:square
+        }
+    </script>
+</body>
+
+</html>

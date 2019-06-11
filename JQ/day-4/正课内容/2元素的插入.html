@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 元素的插入 -->
+    <ul>
+        <li>11111111</li>
+        <li>22222222</li>
+        <li class="li3">33333333</li>
+        <li>44444444</li>
+        <li class="li5">55555555</li>
+    </ul>
+
+    <script src="../jquery.js"></script>
+    <script>
+    // 内部插入
+    $('ul').append('<b>我是append插入的b标签</b>') //ul的后边
+    $('ul').prepend('<i>我是prepend插入的I</i>')  //ul的前边
+
+    $('<div>我是appendTo插入的标签</div>').appendTo('ul')
+    $('<div>我是prependTo插入的标签</div>').prependTo('ul')
+
+
+    // 外部插入
+    $('ul').after('<li>我是after插入的li</li>')
+    $('ul').before('<li>我是before插入的li</li>')
+
+    $('<p>我是insertAfter插入的标签</p>').insertAfter('ul')
+    $('<p>我是insertBefore插入的标签</p>').insertBefore('ul')
+    </script>
+</body>
+</html>

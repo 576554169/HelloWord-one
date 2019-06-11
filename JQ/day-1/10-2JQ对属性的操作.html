@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+    background: red;
+    }
+    </style>
+</head>
+<body>
+    <button>点击</button>
+    <input type="text" class="ipt" value="啦啦啦" disabled>
+    <script src="./jquery.js"></script>
+    <script>
+   $('button').click(function(){
+    //    var $val=$('input').val()
+    //    alert($val)
+
+        //   $('input').attr('class','box')
+        // $('input').attr('disabled','false')  ==>attr没有办法操作布尔值设定的属性
+
+        $('input').prop('disabled',false)
+        /*
+        attr:操作属性，给一个值 是读取，两个值是设置
+        prop:专门操作布尔值设定的属性的
+        */ 
+   })
+    </script>
+</body>
+</html>

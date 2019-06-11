@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        top: 50px;
+        left: 0;
+    }
+    .box2{
+        position: absolute;
+        left: 100px;
+        width: 1px;
+        height: 100px;
+        background: black
+    }
+    .box3{
+        position: absolute;
+        left: 300px;
+        width: 1px;
+        height: 100px;
+        background: black
+    }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick="startMover(100)">运动100</button>
+    <button id="btn" onclick="startMover(300)">运动300</button>
+    <div id="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <script>
+        // 匀速运动的终止条件
+    var oBtn=document.getElementById('btn');
+    var oBox=document.getElementById('box');
+    var time=null;
+    var speed=0;
+    function startMover(iTarget){
+        clearInterval(time)
+      time=setInterval(function(){
+          if(iTarget>oBox.offsetLeft){
+            speed=7
+          }else{
+            speed=-7;
+          }         
+          if(Math.abs(iTarget-oBox.offsetLeft)<=7){
+               clearInterval(time)
+               oBox.style.left=iTarget+'px'
+          }else{
+            oBox.style.left=oBox.offsetLeft+speed+'px'
+          }
+      },30)
+    }
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    button{
+        cursor: wait;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        position: absolute;
+        top: 50px;
+    }
+    #btn{
+        position: absolute;
+    }
+    </style>
+    
+</head>
+<body>
+    <div></div>
+    <button id="btn">古时月</button>
+    <button id="bt">亦明语</button>
+    
+
+
+    <script src="./jquery.js"></script>
+    <script>
+       $('#btn').click(function(){
+           $('div').animate({'left':'80px'},2000,function(){
+             $('div').animate({'top':'100px'},1000)
+           })
+       })
+    </script>
+
+</body>
+</html>
